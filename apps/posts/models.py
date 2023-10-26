@@ -137,7 +137,7 @@ class Direction_Main(models.Model):
     def __str__(self):
         return self.title_main
     
-    class meta:
+    class Meta:
         verbose_name = ''
         verbose_name_plural = 'Настройки Главной Направление'
 
@@ -370,7 +370,7 @@ class Client(models.Model):
 
 
 class Footer(models.Model):
-    title = models.CharField(
+    title1 = models.CharField(
         max_length=100,
         verbose_name='Заголовка - 1'
     )
@@ -391,7 +391,7 @@ class Footer(models.Model):
         verbose_name_plural = 'Услуги'
 
 class Foote(models.Model):
-    context = models.CharField(
+    context1 = models.CharField(
         max_length=255,
         verbose_name='Подзаголовок 1 Услуги'
     ) 
@@ -399,13 +399,13 @@ class Foote(models.Model):
         max_length=255,
         verbose_name='Подзаголовок 2 Услуги'
     )
-    photo = models.ImageField(
-        upload_to='photos/',
-        verbose_name='Фото'
+    image = models.ImageField(
+        upload_to='footer',
+        verbose_name='Конец Footer'
     )
 
     def __str__(self):
-        return self.context
+        return self.context1
     
     class Meta:
         verbose_name = ''
