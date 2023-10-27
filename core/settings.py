@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # apps
     'apps.posts',
+    'apps.service',
 ]
 
 MIDDLEWARE = [
