@@ -14,6 +14,10 @@ class Main(models.Model):
         max_length=155,
         verbose_name='Главная'
     )
+    image = models.ImageField(
+        upload_to='service/',
+        verbose_name='Фото'
+    )
 
     def __str__(self):
         return self.title
