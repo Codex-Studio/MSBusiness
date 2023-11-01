@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 
-
 <body class="theme-vankine scrollbarcolor">
     <!----=============page_wapper=============---->
     <div id="page" class="page_wapper hfeed site">
@@ -21,16 +20,14 @@
         </div>
         <!----=============Preloader end=============---->
         <!----=============Header=============---->
-        {% include 'include/header.html' %}
-
+        {% include "include/header.html" %}
         <!----==============sticky header end==============--->
         <!----==============content_all_warpper==============--->
         <div id="wrapper_full" class="content_all_warpper">
             <!----==============content_all_warpper==============--->
             <!----==============page header==============--->
             <section class="page_header_default pg_bg_cover alignment_center">
-                <div class="bakground_cover"
-                    style="background-image:url({{ main_id.image.url }})"></div>
+                <div class="bakground_cover" style="background-image:url({{ main_id.image.url }})"></div>
                 <div class="page_header_content">
                     <div class="container">
                         <div class="row">
@@ -66,32 +63,32 @@
 
                                 <div class="row loop-grid">
                                     <!---#row---->
-                                    {% for project in project_all %}
+                                    {% for projects in project_all %}
                                     <div class="col-xl-12">
                                         <article class="blog_style one has_images" id="post-1576">
                                             <div class="image_box ">
                                                 <a href="blog-details.html">
-                                                    <img src="{{ project.image.url }}"
-                                                        alt="img" class="img-fluid" />
+                                                    <img src="{{ projects.image.url }}" alt="img"
+                                                        class="img-fluid" />
                                                 </a>
                                             </div>
                                             <div class="content_box">
 
                                                 <a href="blog-details.html" class="cat_gry">
-                                                    <h2>{{ project.title }}</h2>
+                                                    <h2>{{ projects.title }}</h2>
                                                 </a>
 
                                                 <div class="d-flex authour align-items-center">
                                                     <ul>
-                                                        <li>{{ project.text1 }}</li>
-                                                        <li>{{ project.text2 }}</li>
-                                                        <li>{{ project.text3 }}</li>
-                                                        <li>{{ project.text4 }}</li>
+                                                        <li>{{ projects.text1 }}</li>
+                                                        <li>{{ projects.text2 }}</li>
+                                                        <li>{{ projects.text3 }}</li>
+                                                        <li>{{ projects.text4 }}</li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="bottom d-flex  align-items-center">
-                                                    <a href="blog-details.html" class="rd_more">{{ project.end_projectrs }}<i
+                                                    <a href="blog-details.html" class="rd_more">{{ projects.end_projectrs }}<i
                                                             class="fi-rr-arrow-small-right"></i>
                                                     </a>
 
@@ -100,6 +97,138 @@
                                         </article>
                                     </div>
                                     {% endfor %}
+                                    <!-- <div class="col-xl-12">
+                                        <article class="blog_style one has_images" id="post-1576">
+                                            <div class="image_box ">
+                                                <a href="blog-details.html">
+                                                    <img src="assets/images/MS/alaget.jpeg" alt="img"
+                                                        class="img-fluid" />
+                                                </a>
+                                            </div>
+                                            <div class="content_box">
+
+                                                <a href="blog-details.html" class="cat_gry">
+                                                    <h2>Приложение Alaget</h2>
+                                                </a>
+
+                                                <div class="d-flex authour align-items-center">
+                                                    <ul>
+                                                        <li>Разработка маркетинговой стратегии</li>
+                                                        <li>Разработка и реализация стратегии продвижения и
+                                                            позиционирования</li>
+                                                        <li>Разработка сайта</li>
+                                                        <li>Запуск социальных сетей и таргетированной рекламы</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="bottom d-flex  align-items-center">
+                                                    <a href="blog-details.html" class="rd_more">Читать Далее <i
+                                                            class="fi-rr-arrow-small-right"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <article class="blog_style one has_images" id="post-1576">
+                                            <div class="image_box ">
+                                                <a href="blog-details.html">
+                                                    <img src="assets/images/MS/client-logo-3.png" alt="img"
+                                                        class="img-fluid" />
+                                                </a>
+                                            </div>
+                                            <div class="content_box">
+
+                                                <a href="blog-details.html" class="cat_gry">
+                                                    <h2>Сеть магазинов L’etoile</h2>
+                                                </a>
+
+                                                <div class="d-flex authour align-items-center">
+                                                    <ul>
+                                                        <li>Анализ рынка Кыргызстана и Таджикистана</li>
+                                                        <li>Разработка стратегий выхода на рынки анализируемых стран
+                                                        </li>
+                                                        <li>Разработка маркетинговой стратегии</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="bottom d-flex  align-items-center">
+                                                    <a href="blog-details.html" class="rd_more">Читать Далее <i
+                                                            class="fi-rr-arrow-small-right"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <article class="blog_style one has_images" id="post-1576">
+                                            <div class="image_box ">
+                                                <a href="blog-details.html">
+                                                    <img src="assets/images/MS/client-logo-6.png" alt="img"
+                                                        class="img-fluid" />
+                                                </a>
+                                            </div>
+                                            <div class="content_box">
+
+                                                <a href="blog-details.html" class="cat_gry">
+                                                    <h2>Логистическая компания СДЕК</h2>
+                                                </a>
+
+                                                <div class="d-flex authour align-items-center">
+                                                    <ul>
+                                                        <li>Разработка маркетинговой стратегии</li>
+                                                        <li>Анализ рынка Кыргызстана и Узбекистана</li>
+                                                        <li>Разработка рекомендаций по улучшению рыночных позиций в
+                                                            данных регионах</li>
+                                                        <li>Разработка маркетинговой стратегии</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="bottom d-flex  align-items-center">
+                                                    <a href="blog-details.html" class="rd_more">Читать Далее <i
+                                                            class="fi-rr-arrow-small-right"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <article class="blog_style one has_images" id="post-1576">
+                                            <div class="image_box ">
+                                                <a href="blog-details.html">
+                                                    <img src="assets/images/MS/euforia_parfium.png" alt="img"
+                                                        class="img-fluid" />
+                                                </a>
+                                            </div>
+                                            <div class="content_box">
+
+                                                <a href="blog-details.html" class="cat_gry">
+                                                    <h2>Сеть магазинов Euphoria Parfums</h2>
+                                                </a>
+
+                                                <div class="d-flex authour align-items-center">
+                                                    <ul>
+                                                        <li>Разработка маркетинговой стратегии</li>
+                                                        <li>Ребрендинг</li>
+                                                        <li>Анализ рынка парфюмерии и косметики КР</li>
+                                                        <li>Создание личного бренда</li>
+                                                        <li>Маркетинговое сопровождение</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="bottom d-flex  align-items-center">
+                                                    <a href="blog-details.html" class="rd_more">Читать Далее <i
+                                                            class="fi-rr-arrow-small-right"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div> -->
+
                                 </div>
 
                                 <!---============spacing==========--->
@@ -123,7 +252,7 @@
         </div>
         <!--content end-->
         <!--footer start-->
-        {% include "include/footer.html" %}
+        {% include "include/footer.html"%}
         <!--footer  end-->
         <!----==============content_all_warpper==============--->
     </div>
@@ -154,7 +283,7 @@
                             class="fi-rs-envelope"></i>mailbox.msbusiness@gmail.com</a>
                 </div>
                 <div class="single-mobile-header-info">
-                    <a href="index.html#" class="theme_btn tp_one">Контакты</a>
+                    <a href="contact.html" class="theme_btn tp_one">Контакты</a>
                 </div>
                 <div class="single-mobile-header-info">
                     <a href="index.html#" class="theme_btn">Service</a>
@@ -196,4 +325,5 @@
     <!----=============page_wapper end=============---->
     </div>
     <!----=============page_wapper end=============---->
+    <!----=================Script================---->
     {% endblock %}

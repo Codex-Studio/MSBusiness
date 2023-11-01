@@ -18,7 +18,7 @@
         </div>
         <!----=============Preloader end=============---->
         <!----=============Header=============---->
-        {% include 'include/header.html' %}
+         {% include "include/header.html" %}
         <!----==============sticky header end==============--->
         <!----==============content_all_warpper==============--->
         <div id="wrapper_full" class="content_all_warpper">
@@ -40,7 +40,8 @@
                                         <div class="col-md-7">
                                             <div class="slider_content">
                                                 <div class="bg_image animate_up">
-                                                    <img src="{{ main.image2.url }}" class="img-fluid" alt="ptimage" />
+                                                    <img src="{{ main.image2.url }}" class="img-fluid"
+                                                        alt="ptimage" />
                                                 </div>
                                                 <h1 class="animate_left">
                                                     {{ main.title }}
@@ -57,8 +58,6 @@
                             </div>
                         </div>
                         {% endfor %}
-                        <!---slider-->
-                        <!---slider-->
                     </div>
                 </section>
                 <!---slider-end--->
@@ -92,7 +91,8 @@
                                     <div class="service_box type_two hover_1_get">
                                         <a href="service.html" class="img_bx">
                                             <div class="image trans hover_1">
-                                                <img src="{{ job.image.url }}" class="img-fluid" alt="service-image" />
+                                                <img src="{{ job.image.url }}" class="img-fluid"
+                                                    alt="service-image" />
                                                 <div class="oh ho_1"></div>
                                                 <div class="oh ho_2"></div>
                                                 <div class="oh ho_3"></div>
@@ -151,7 +151,7 @@
                                 <div class="section_title type_one">
                                     <h4 class="sm_title2">{{ about_id.title }}</h4>
                                     <div class="title_whole">
-                                        <h2 class="title">{{ about_id }}</h2>
+                                        <h2 class="title">{{ about_id.context }}</h2>
                                     </div>
                                 </div>
                                 <!---============spacing==========--->
@@ -164,6 +164,7 @@
                                             <div class="tab_content_box">
                                                 <div class="content">
                                                     {{ about_id.text }}</div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -194,7 +195,7 @@
                     <!---============spacing==========--->
                     <div class="pd_top_80"></div>
                     <!---============spacing==========--->
-
+                   
                     <div class="position-relative z_1">
                         <div class="container pd_zero md_pd_left_15 md_pd_right_15">
                             <div class="row">
@@ -211,7 +212,7 @@
                             <div class="pd_bottom_40"></div>
                             <!---============spacing==========--->
                             <div class="row  mr_left_minus_15 mr_right_minus_15">
-                                {% for directions in directions_all %}
+                                {% for descriptions in directions_all %}
                                 <div class="col-xl-3">
                                     <div class="service_box type_five style_two icon_box_only type_three trans">
                                         <div class="icon_inner trans">
@@ -219,320 +220,794 @@
                                                 <div class="content">
                                                     <div class="title_22">
                                                         <a href="#service.html">
-                                                            {{ directions.blog_title }}</a>
+                                                            {{ descriptions.blog_title }}</a>
                                                     </div>
                                                     <p class="trans">
-                                                        {{ directions.blog_context }}</p>
+                                                        {{ descriptions.blog_context }}</p>
                                                     <a href="#service.html" class="rd_more">
-                                                        {{ directions.end_blog }}
+                                                        {{ descriptions.end_blog }}
                                                         <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M8 1L13 6M13 6L8 11M13 6H1"
                                                                 stroke="var(--color-white)" stroke-width="1.5"
                                                                 stroke-linecap="round" stroke-linejoin="round">
                                                             </path>
-                                                        </svg>
-                                                    </a>
+                                                        </svg></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 {% endfor %}
+                                </div>
+                            </div> 
+
+
                             </div>
                         </div>
-                    </div>
-            </div>
-            <div class="ab_img_right_bottom mr_bottom_minus_250 z_0">
-                <img src="{% static 'assets/images/shape/wave-pattern-1.png' %}" class="img-fluid" alt="img">
-            </div>
-            <!---============spacing==========--->
-            <div class="pd_bottom_80"></div>
-            <!---============spacing==========--->
-
-            </section>
-            <!---service end-->
-
-            <!---faqs-->
-            <section class="faq-section">
-                <!---============spacing==========--->
-                <div class="pd_top_80"></div>
-                <!---============spacing==========--->
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="section_title type_one">
-                                <h4 class="sm_title3">{{ advantages_id.title }}</h4>
-                                <div class="title_whole">
-                                    <h2 class="title">{{ advantages_id.context }}</h2>
-                                </div>
-                                <!---============spacing==========--->
-                                <div class="pd_bottom_20"></div>
-                                <!---============spacing==========--->
-                            </div>
-                            <div class="position-relative br_left_3px_theme_color pd_left_10">
-                                {{ advantages_id.text }}
-                            </div>
-                            <!---============spacing==========--->
-                            <div class="pd_bottom_30"></div>
-                            <!---============spacing==========--->
-                            <div class="block_faq">
-                                <div class="accordion-box">
-                                    <div class="accordion  active-block">
-                                        <div class="question faq_header active">
-                                            <div class="question_box">
-                                                <div class="title_no_a_18 trans">{{ advantages_id.informations_title }}
-                                                </div>
-                                                <span class="icon_fq trans fi-rs-arrow-small-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="answer accordion-content current">
-                                            {{ advantages_id.informations_context }}
-                                        </div>
-                                    </div>
-                                    {% for advantages in advantages_all %}
-                                    <div class="accordion">
-                                        <div class="question  faq_header">
-                                            <div class="question_box ">
-                                                <div class="title_no_a_18 trans">{{ advantages.informations_title }}
-                                                </div>
-                                                <span class="icon_fq trans fi-rs-arrow-small-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="answer accordion-content">
-                                            {{ advantages.informations_context }}
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            <!---============spacing==========--->
-                            <div class="pd_bottom_40"></div>
-                            <!---============spacing==========--->
+                        <div class="ab_img_right_bottom mr_bottom_minus_250 z_0">
+                            <img src="{% static 'assets/images/shape/wave-pattern-1.png' %}" class="img-fluid" alt="img">
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 pd_left_30">
-                            <div class="image_box_only  type_three">
-                                {% for advantages in advantages_all %}
-                                <div class="left">
-                                    <div class="image one">
-                                        <img src="{{ advantages.image.url }}" alt="img"
-                                            class="img-fluid">
-                                    </div>
-                                    <!-- <div class="image two">
-                                        <img src="{% static 'assets/images/about/about-2-3.jpg' %}" alt="img"
-                                            class="img-fluid">
-                                    </div> -->
-                                </div>
-                                {% endfor %}
-                                <div class="right">
-                                    <div class="image three">
-                                        <img src="{{ advantages_id.image2.url }}" alt="img"
-                                            class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            <!---============spacing==========--->
-                            <div class="pd_bottom_40"></div>
-                            <!---============spacing==========--->
-                        </div>
-                    </div>
-                </div>
-                <!---============spacing==========--->
-                <div class="pd_bottom_40"></div>
-                <!---============spacing==========--->
-            </section>
-            <!---faqs end-->
+                        <!---============spacing==========--->
+                        <div class="pd_bottom_80"></div>
+                        <!---============spacing==========--->
 
-            <!--fun fact-->
-            <section class="fub-fact-section mr_bottom_minus_90 position-relative z_2">
-                <div class="medium-container">
-                    <div class="inner-section bg_op_1 position-relative overflow-hidden pd_top_60 pd_bottom_30 pd_left_60 pd_right_60 md_pd_left_15 md_pd_right_15"
-                        style="background-image: url({{ descriptions_id.image.url }});">
-                        <div class="background_overlay z_0"></div>
-                        <div class="row">
-                            {% for descriptions in descriptions_all %}
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                <div class="fun_facts type_three">
-                                    <div class="icon trans">
-                                        {% if descriptions.icon == 'Довольных клиентов' %}
-                                        <i class="color_white flaticon-satisfaction"></i>
-                                        {% endif %}
-                                        {% if descriptions.icon == 'Опытных сотрудников' %}
-                                        <i class="color_white flaticon-business-people"></i>
-                                        {% endif %}
-                                        {% if descriptions.icon == 'Удовлетворенности' %}
-                                        <i class="color_white flaticon-reviews"></i>
-                                        {% endif %}
-                                        {% if descriptions.icon == 'Наград' %}
-                                        <i class="color_white flaticon-trophy"></i>
-                                        {% endif %}
+                </section>
+                <!---service end-->
+
+                <!---faqs-->
+                <section class="faq-section">
+                    <!---============spacing==========--->
+                    <div class="pd_top_80"></div>
+                    <!---============spacing==========--->
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="section_title type_one">
+                                    <h4 class="sm_title3">{{ advantages_id.title }}</h4>
+                                    <div class="title_whole">
+                                        <h2 class="title">{{ advantages_id }}</h2>
                                     </div>
-                                    <div class="content">
-                                        <h4>
-                                            <span class="count color_white">{{ descriptions.context }}</span>
-                                            <small class="color_white"> + </small>
-                                        </h4>
-                                        <h6 class="title_no_a_18 color_white">{{ descriptions.title }}</h6>
-                                    </div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_20"></div>
+                                    <!---============spacing==========--->
+                                </div>
+                                <div class="position-relative br_left_3px_theme_color pd_left_10">
+                                    {{ advantages_id.text }}
                                 </div>
                                 <!---============spacing==========--->
                                 <div class="pd_bottom_30"></div>
                                 <!---============spacing==========--->
+                                <div class="block_faq">
+                                    <div class="accordion-box">
+
+                                        <div class="accordion  active-block">
+                                            <div class="question faq_header active">
+                                                <div class="question_box">
+                                                    <div class="title_no_a_18 trans">{{ advantages_id.informations_title }}
+                                                    </div>
+                                                    <span class="icon_fq trans fi-rs-arrow-small-right"></span>
+                                                </div>
+                                            </div>
+                                            <div class="answer accordion-content current">
+                                                {{ advantages_id.informations_context }}
+                                            </div>
+                                        </div>
+                                        {% for advantages in advantages_all %}
+                                        <div class="accordion">
+                                            <div class="question  faq_header">
+                                                <div class="question_box ">
+                                                    <div class="title_no_a_18 trans">{{ advantages.informations_title }}
+                                                    </div>
+                                                    <span class="icon_fq trans fi-rs-arrow-small-right"></span>
+                                                </div>
+                                            </div>
+                                            <div class="answer accordion-content">
+                                                {{ advantages.informations_context }}
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <!---============spacing==========--->
+                                <div class="pd_bottom_40"></div>
+                                <!---============spacing==========--->
                             </div>
-                            {% endfor %}
+                            <div class="col-lg-6 col-md-6 col-sm-12 pd_left_30">
+                                <div class="image_box_only  type_three">
+                                    <div class="left">
+                                        {% for advan in advantages_all %}
+                                        <div class="image one">
+                                            <img src="{{ advan.image.url }}" alt="img" class="img-fluid">
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="right">
+                                        <div class="image three">
+                                            <img src="{{ advantages_id.image2.url }}" alt="img" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---============spacing==========--->
+                                <div class="pd_bottom_40"></div>
+                                <!---============spacing==========--->
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!--fun fact-->
+                    <!---============spacing==========--->
+                    <div class="pd_bottom_40"></div>
+                    <!---============spacing==========--->
+                </section>
+                <!---faqs end-->
 
-            <!--form section-->
-            <section class="form-section bg_light_1 position-relative">
-                <div class="ab_img_left_top">
-                    <img src="{% static 'assets/images/bg.png' %}" class="img-fluid" alt="img">
-                </div>
-                <!---============spacing==========--->
-                <div class="pd_top_190"></div>
-                <!---============spacing==========--->
-                <div class="container-fluid">
-                    <div class="row align-items-end">
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            <div class="image">
-                                <img src="{{ application_id.image.url }}" class="img-fluid m-auto"
-                                    alt="img" />
+                <!--fun fact-->
+                <section class="fub-fact-section mr_bottom_minus_90 position-relative z_2">
+                    <div class="medium-container">
+                        <div class="inner-section bg_op_1 position-relative overflow-hidden pd_top_60 pd_bottom_30 pd_left_60 pd_right_60 md_pd_left_15 md_pd_right_15"
+                            style="background-image: url({{ descriptions_id.image.url }});">
+                            <div class="background_overlay z_0"></div>
+                            <div class="row">
+                                {% for descriptions in descriptions_all %}
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="fun_facts type_three">
+                                        <div class="icon trans">
+                                            {% if descriptions.icon == 'Довольных клиентов' %}
+                                            <i class="color_white flaticon-satisfaction"></i>
+                                            {% endif %}
+                                            {% if descriptions.icon == 'Опытных сотрудников' %}
+                                            <i class="color_white flaticon-business-people"></i>
+                                            {% endif %}
+                                            {% if descriptions.icon == 'Удовлетворенности' %}
+                                            <i class="color_white flaticon-reviews"></i>
+                                            {% endif %}
+                                            {% if descriptions.icon == 'Наград' %}
+                                            <i class="color_white flaticon-trophy"></i>
+                                            {% endif %}
+                                        </div>
+                                        <div class="content">
+                                            <h4>
+                                                <span class="count color_white">{{ descriptions.context }}</span>
+                                                <small class="color_white"> + </small>
+                                            </h4>
+                                            <h6 class="title_no_a_18 color_white">{{ descriptions.title }}</h6>
+                                        </div>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_30"></div>
+                                    <!---============spacing==========--->
+                                </div>
+                                {% endfor %}
+                                <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="fun_facts type_three">
+                                        <div class="icon trans">
+                                            <i class="color_white flaticon-business-people"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4>
+                                                <span class="count color_white">263</span>
+                                                <small class="color_white"> + </small>
+                                            </h4>
+                                            <h6 class="title_no_a_18 color_white">Опытных сотрудников</h6>
+                                        </div>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <!-- <div class="pd_bottom_30"></div>
+                                    -============spacing==========- -->
+                                <!-- </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="fun_facts type_three">
+                                        <div class="icon trans">
+                                            <i class="color_white flaticon-reviews"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4>
+                                                <span class="count color_white">100</span>
+                                                <small class="color_white"> % </small>
+                                            </h4>
+                                            <h6 class="title_no_a_18 color_white">Удовлетворенности</h6>
+                                        </div>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <!-- <div class="pd_bottom_30"></div> -->
+                                    <!---============spacing==========--->
+                                <!-- </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"> -->
+                                    <!-- <div class="fun_facts type_three">
+                                        <div class="icon trans">
+                                            <i class="color_white flaticon-trophy"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4>
+                                                <span class="count color_white">963</span>
+                                                <small class="color_white"> + </small>
+                                            </h4>
+                                            <h6 class="title_no_a_18 color_white">Наград</h6>
+                                        </div>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <!-- <div class="pd_bottom_30"></div> -->
+                                    <!---============spacing==========--->
+                                <!-- </div> --> --> --> -->
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="section_title text-center type_one">
-                                <h4 class="sm_title">{{ application_id.title }}</h4>
-                                <div class="title_whole">
-                                    <h2 class="title">{{ application_id.context }}</h2>
+                    </div>
+                </section>
+                <!--fun fact-->
+
+                <!--form section-->
+                <section class="form-section bg_light_1 position-relative">
+                    <div class="ab_img_left_top">
+                        <img src="{% static 'assets/images/bg.png' %}" class="img-fluid" alt="img">
+                    </div>
+                    <!---============spacing==========--->
+                    <div class="pd_top_190"></div>
+                    <!---============spacing==========--->
+                    <div class="container-fluid">
+                        <div class="row align-items-end">
+                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                <div class="image">
+                                    <img src="{{ application_id.image.url }}" class="img-fluid m-auto" alt="img" />
                                 </div>
                             </div>
-                            <!---============spacing==========--->
-                            <div class="pd_bottom_40"></div>
-                            <!---============spacing==========--->
-                            <section class="fom_tab_box custom_tabs type_one">
-                                <ul class="nav nav-tabs links trans justify-content-center" role="tablist">
-                                    {% for appli in application_all %}
-                                    <li class="nav-item">
-                                        <button class="nav-link" id="tab1-cartab" data-bs-toggle="tab"
-                                            data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1"
-                                            aria-selected="false">
-                                            {{ appli.speakers }}
-                                        </button>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                <div class="s_tabs_content tab-content">
-                                    {% for application in application_all %}
-                                    <div class="tab-pane" id="tab1" role="tabpanel" aria-labelledby="tab1-cartab">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="section_title text-center type_one">
+                                    <h4 class="sm_title">{{ application_id.title }}</h4>
+                                    <div class="title_whole">
+                                        <h2 class="title"> {{ application_id.context }}</h2>
+                                    </div>
+                                </div>
+                                <!---============spacing==========--->
+                                <div class="pd_bottom_40"></div>
+                                <!---============spacing==========--->
+                                <section class="fom_tab_box custom_tabs type_one">
+                                    <ul class="nav nav-tabs links trans justify-content-center" role="tablist">
+                                        <li class="nav-item">
+                                            <button class="nav-link active" id="tab2-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2"
+                                                aria-selected="true">
+                                                {{ application_id.speakers }}
+                                            </button>
+                                        </li>
+                                        {% for application in application_all %}
+                                        <li class="nav-item">
+                                            <button class="nav-link" id="tab1-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1"
+                                                aria-selected="false">
+                                                {{ application.speakers }}
+                                            </button>
+                                        </li>
+                                        {% endfor %}
+                                        <!-- <li class="nav-item">
+                                            <button class="nav-link " id="tab3-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3"
+                                                aria-selected="false">
+                                                Бизнес-Планирование
+                                            </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button class="nav-link " id="tab4-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab4" type="button" role="tab" aria-controls="tab4"
+                                                aria-selected="false">
+                                                Организационная Стратегия
+                                            </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button class="nav-link " id="tab5-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab5" type="button" role="tab" aria-controls="tab5"
+                                                aria-selected="false">
+                                                Иследование И Онализ Рынков
+                                            </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button class="nav-link " id="tab6-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab6" type="button" role="tab" aria-controls="tab6"
+                                                aria-selected="false">
+                                                Кабинетные Иследования
+                                            </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button class="nav-link " id="tab7-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab7" type="button" role="tab" aria-controls="tab7"
+                                                aria-selected="false">
+                                                Брендинг И Фирменный Стиль
+                                            </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button class="nav-link " id="tab8-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab8" type="button" role="tab" aria-controls="tab8"
+                                                aria-selected="false">
+                                                Финансовый Налоговый Консалтинг
+                                            </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button class="nav-link " id="tab9-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab9" type="button" role="tab" aria-controls="tab9"
+                                                aria-selected="false">
+                                                Автоматизация Бизнеса
+                                            </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button class="nav-link " id="tab10-cartab" data-bs-toggle="tab"
+                                                data-bs-target="#tab10" type="button" role="tab" aria-controls="tab10"
+                                                aria-selected="false">
+                                                Дизайн И Архитектура
+                                            </button>
+                                        </li> -->
+                                    </ul>
+                                    <div class="s_tabs_content tab-content">
+                                    <div class="tab-pane active" id="tab2" role="tabpanel" aria-labelledby="tab2-cartab">
                                         <div class="contentbox ">
                                             <div class="contact_form_shortcode">
                                                 <form method="post" action="index.html#">
                                                     <div class="row">
                                                         <div class="col-lg-4 col-md-4 col-sm-12">
-                                                            <label>{{ application.frist_name }}<span>*</span></label>
+                                                            <label>{{ application_id.frist_name }} <span>*</span></label>
                                                             <input type="text" name="name"
                                                                 placeholder="Антонов Антон Антонович" required="">
                                                         </div>
                                                         <div class="col-lg-4 col-md-4 col-sm-12">
-                                                            <label>{{ application.phone_number }}</label>
+                                                            <label>{{ application_id.phone_number }}</label>
                                                             <input type="text" name="phone"
                                                                 placeholder="+996-777-777-777">
                                                         </div>
                                                         <div class="col-lg-4 col-md-4 col-sm-12">
-                                                            <label>{{ application.addres_email }}<span
+                                                            <label>{{ application_id.addres_email }}<span
                                                                     class="wpforms-required-label">*</span></label>
                                                             <input type="email" name="email"
                                                                 placeholder="Ваша почта@gmail.com" required="">
                                                         </div>
+
                                                         <div class="col-lg-6 col-md-6 col-sm-12">
-                                                            <label>{{ application.limit }}</label>
+                                                            <label>{{ application_id.limit }}</label>
                                                             <input type="range" name="range" value="4000" min="0"
                                                                 max="8560" step="1">
-                                                            <div class="slider-hint">{{ application.meaning_main }}<b>{{ application.meaning }}</b>
+                                                            <div class="slider-hint">{{ application_id.meaning_main }}<b>{{ application_id.meaning }}</b>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
-                                                            <button type="submit">{{ application.end_application }}</button>
+                                                            <button type="submit">{{ application_id.end_application }}</button>
                                                         </div>
                                                     </div>
+
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                                    {% endfor %}
+                                        {% for applications in application_all %}
+                                        <div class="tab-pane" id="tab1" role="tabpanel" aria-labelledby="tab1-cartab">
+                                            <div class="contentbox ">
+                                                <div class="contact_form_shortcode">
+                                                    <form method="post" action="index.html#">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                <label>{{ applications.frist_name }}<span>*</span></label>
+                                                                <input type="text" name="name"
+                                                                    placeholder="Антонов Антон Антонович" required="">
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                <label>{{ applications.phone_number }}</label>
+                                                                <input type="text" name="phone"
+                                                                    placeholder="+996-777-777-777">
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                <label>{{ applications.addres_email }}<span
+                                                                        class="wpforms-required-label">*</span></label>
+                                                                <input type="email" name="email"
+                                                                    placeholder="Ваша почта@gmail.com" required="">
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <label>{{ applications.limit }}</label>
+                                                                <input type="range" name="range" value="4000" min="0"
+                                                                    max="8560" step="1">
+                                                                <div class="slider-hint">{{ applications.meaning_main }}<b>{{ applications.meaning }}</b>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
+                                                                <button type="submit">{{ applications.end_application }}</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        <!-- <div class="tab-pane  " id="tab3" role="tabpanel" aria-labelledby="tab3-cartab">
+                                            <div class="contact_form_shortcode">
+                                                <form method="post" action="index.html#">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>ФИО <span>*</span></label>
+                                                            <input type="text" name="name"
+                                                                placeholder="Антонов Антон Антонович" required="">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Телефон</label>
+                                                            <input type="text" name="phone"
+                                                                placeholder="+996-777-777-777">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Адресс Email <span
+                                                                    class="wpforms-required-label">*</span></label>
+                                                            <input type="email" name="email"
+                                                                placeholder="Ваша почта@gmail.com" required="">
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <label>Лимит по бюджету</label>
+                                                            <input type="range" name="range" value="4000" min="0"
+                                                                max="8560" step="1">
+                                                            <div class="slider-hint">Выбранное значение: <b>4000</b>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
+                                                            <button type="submit">Отправить</button>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane  " id="tab4" role="tabpanel" aria-labelledby="tab4-cartab">
+                                            <div class="contact_form_shortcode">
+                                                <form method="post" action="index.html#">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>ФИО <span>*</span></label>
+                                                            <input type="text" name="name"
+                                                                placeholder="Антонов Антон Антонович" required="">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Телефон</label>
+                                                            <input type="text" name="phone"
+                                                                placeholder="+996-777-777-777">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Адресс Email <span
+                                                                    class="wpforms-required-label">*</span></label>
+                                                            <input type="email" name="email"
+                                                                placeholder="Ваша почта@gmail.com" required="">
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <label>Лимит по бюджету</label>
+                                                            <input type="range" name="range" value="4000" min="0"
+                                                                max="8560" step="1">
+                                                            <div class="slider-hint">Выбранное значение: <b>4000</b>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
+                                                            <button type="submit">Отправить</button>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane  " id="tab5" role="tabpanel" aria-labelledby="tab5-cartab">
+                                            <div class="contact_form_shortcode">
+                                                <form method="post" action="index.html#">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>ФИО <span>*</span></label>
+                                                            <input type="text" name="name"
+                                                                placeholder="Антонов Антон Антонович" required="">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Телефон</label>
+                                                            <input type="text" name="phone" placeholder="+996-777-777-777">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Адресс Email <span
+                                                                    class="wpforms-required-label">*</span></label>
+                                                            <input type="email" name="email"
+                                                                placeholder="Ваша почта@gmail.com" required="">
+                                                        </div>
+    
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <label>Лимит по бюджету</label>
+                                                            <input type="range" name="range" value="4000" min="0" max="8560"
+                                                                step="1">
+                                                            <div class="slider-hint">Выбранное значение: <b>4000</b>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
+                                                            <button type="submit">Отправить</button>
+                                                        </div>
+                                                    </div>
+    
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane  " id="tab6" role="tabpanel" aria-labelledby="tab6-cartab">
+                                            <div class="contact_form_shortcode">
+                                                <form method="post" action="index.html#">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>ФИО <span>*</span></label>
+                                                            <input type="text" name="name"
+                                                                placeholder="Антонов Антон Антонович" required="">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Телефон</label>
+                                                            <input type="text" name="phone" placeholder="+996-777-777-777">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Адресс Email <span
+                                                                    class="wpforms-required-label">*</span></label>
+                                                            <input type="email" name="email"
+                                                                placeholder="Ваша почта@gmail.com" required="">
+                                                        </div>
+    
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <label>Лимит по бюджету</label>
+                                                            <input type="range" name="range" value="4000" min="0" max="8560"
+                                                                step="1">
+                                                            <div class="slider-hint">Выбранное значение: <b>4000</b>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
+                                                            <button type="submit">Отправить</button>
+                                                        </div>
+                                                    </div>
+    
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="tab7" role="tabpanel" aria-labelledby="tab7-cartab">
+                                            <div class="contentbox ">
+                                                <div class="contact_form_shortcode">
+                                                    <form method="post" action="index.html#">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                <label>ФИО <span>*</span></label>
+                                                                <input type="text" name="name"
+                                                                    placeholder="Антонов Антон Антонович" required="">
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                <label>Телефон</label>
+                                                                <input type="text" name="phone"
+                                                                    placeholder="+996-777-777-777">
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                <label>Адресс Email <span
+                                                                        class="wpforms-required-label">*</span></label>
+                                                                <input type="email" name="email"
+                                                                    placeholder="Ваша почта@gmail.com" required="">
+                                                            </div>
+
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <label>Лимит по бюджету</label>
+                                                                <input type="range" name="range" value="4000" min="0"
+                                                                    max="8560" step="1">
+                                                                <div class="slider-hint">Выбранное значение: <b>4000</b>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
+                                                                <button type="submit">Отправить</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="tab8" role="tabpanel" aria-labelledby="tab8-cartab">
+                                            <div class="contentbox ">
+                                                <div class="contact_form_shortcode">
+                                                    <form method="post" action="index.html#">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                <label>ФИО <span>*</span></label>
+                                                                <input type="text" name="name"
+                                                                    placeholder="Антонов Антон Антонович" required="">
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                <label>Телефон</label>
+                                                                <input type="text" name="phone"
+                                                                    placeholder="+996-777-777-777">
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                <label>Адресс Email <span
+                                                                        class="wpforms-required-label">*</span></label>
+                                                                <input type="email" name="email"
+                                                                    placeholder="Ваша почта@gmail.com" required="">
+                                                            </div>
+
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <label>Лимит по бюджету</label>
+                                                                <input type="range" name="range" value="4000" min="0"
+                                                                    max="8560" step="1">
+                                                                <div class="slider-hint">Выбранное значение: <b>4000</b>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
+                                                                <button type="submit">Отправить</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane  " id="tab9" role="tabpanel" aria-labelledby="tab9-cartab">
+                                            <div class="contact_form_shortcode">
+                                                <form method="post" action="index.html#">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>ФИО <span>*</span></label>
+                                                            <input type="text" name="name"
+                                                                placeholder="Антонов Антон Антонович" required="">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Телефон</label>
+                                                            <input type="text" name="phone"
+                                                                placeholder="+996-777-777-777">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Адресс Email <span
+                                                                    class="wpforms-required-label">*</span></label>
+                                                            <input type="email" name="email"
+                                                                placeholder="Ваша почта@gmail.com" required="">
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <label>Лимит по бюджету</label>
+                                                            <input type="range" name="range" value="4000" min="0"
+                                                                max="8560" step="1">
+                                                            <div class="slider-hint">Выбранное значение: <b>4000</b>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
+                                                            <button type="submit">Отправить</button>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane  " id="tab10" role="tabpanel" aria-labelledby="tab10-cartab">
+                                            <div class="contact_form_shortcode">
+                                                <form method="post" action="index.html#">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>ФИО <span>*</span></label>
+                                                            <input type="text" name="name"
+                                                                placeholder="Антонов Антон Антонович" required="">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Телефон</label>
+                                                            <input type="text" name="phone"
+                                                                placeholder="+996-777-777-777">
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                                            <label>Адресс Email <span
+                                                                    class="wpforms-required-label">*</span></label>
+                                                            <input type="email" name="email"
+                                                                placeholder="Ваша почта@gmail.com" required="">
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <label>Лимит по бюджету</label>
+                                                            <input type="range" name="range" value="4000" min="0"
+                                                                max="8560" step="1">
+                                                            <div class="slider-hint">Выбранное значение: <b>4000</b>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-12 text-md-end">
+                                                            <button type="submit">Отправить</button>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div> -->
+
+                                    </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                <div class="image">
+                                    <img src="{{ application_id.image2.url }}" class="img-fluid m-auto" alt="img" />
                                 </div>
-                            </section>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            <div class="image">
-                                <img src="{{ application_id.image2.url }}" class="img-fluid m-auto"
-                                    alt="img" />
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>  
-            <!--form-section end-->
-            <!---client-section--->
-            <section class="client-section">
-                <!---============spacing==========--->
-                <div class="pd_top_80"></div>
-                <!---============spacing==========--->
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 col-md-12">
-                            <div class="section_title type_one">
-                                <h4 class="sm_title">{{ klient_id.title }}</h4>
-                                <div class="title_whole">
-                                    <h2 class="title">
-                                        {{ klient_id.context }}
-                                    </h2>
-                                </div>
-                            </div>
-                            <!---============spacing==========--->
-                            <div class="pd_bottom_30"></div>
-                            <!---============spacing==========--->
-                            <div class="theme_btn_all">
-                                <a href="blog.html" class="theme_btn big rotate">
-                                    {{ klient_id.end_coment }} <span> <i class="fi-rr-arrow-small-up"></i></span>
-                                </a>
-                            </div>
-                            <!---============spacing==========--->
-                            <div class="pd_bottom_20"></div>
-                            <!---============spacing==========--->
-                        </div>
-                        <div class="col-lg-7 col-md-12">
-                            <div class="client_grid">
-                                {% for klient in klient_all %}
-                                <div class="client_box">
-                                    <a href="index.html#">
-                                        <img src="{{ klient.image.url }}" class="img-fluid"
-                                            alt="img" />
-                                    </a>
-                                </div>
-                                {% endfor %}
-                            </div>
+                </section>
+                
+            
+    <!--form-section end-->
+
+
+
+
+
+    <!---client-section--->
+    <section class="client-section">
+        <!---============spacing==========--->
+        <div class="pd_top_80"></div>
+        <!---============spacing==========--->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-12">
+                    <div class="section_title type_one">
+                        <h4 class="sm_title">{{ klient_id.title }}</h4>
+                        <div class="title_whole">
+                            <h2 class="title">
+                                {{ klient_id.context }}
+                            </h2>
                         </div>
                     </div>
+                    <!---============spacing==========--->
+                    <div class="pd_bottom_30"></div>
+                    <!---============spacing==========--->
+                    <div class="theme_btn_all">
+                        <a href="blog.html" class="theme_btn big rotate">
+                            {{ klient_id.end_coment }} <span> <i class="fi-rr-arrow-small-up"></i></span>
+                        </a>
+                    </div>
+                    <!---============spacing==========--->
+                    <div class="pd_bottom_20"></div>
+                    <!---============spacing==========--->
                 </div>
-                <!---============spacing==========--->
-                <div class="pd_bottom_90"></div>
-                <!---============spacing==========--->
-            </section>
-            <!---client-section-end --->
-
-
-
+                <div class="col-lg-7 col-md-12">
+                    <div class="client_grid">
+                        {% for klient in klient_all %}
+                        <div class="client_box">
+                            <a href="index.html#">
+                                <img src="{{ klient.image.url }}" class="img-fluid" alt="img" />
+                            </a>
+                        </div>
+                        {% endfor %}
+                        <!-- <div class="client_box">
+                            <a href="index.html#">
+                                <img src="{% static 'assets/images/MS/client-logo-2.png' %}" class="img-fluid" alt="img" />
+                            </a>
+                        </div>
+                        <div class="client_box">
+                            <a href="index.html#">
+                                <img src="{% static 'assets/images/MS/client-logo-3.png' %}" class="img-fluid" alt="img" />
+                            </a>
+                        </div>
+                        <div class="client_box">
+                            <a href="index.html#">
+                                <img src="{% static 'assets/images/MS/client-logo-7.svg' %}" class="img-fluid" alt="img" />
+                            </a>
+                        </div>
+                        <div class="client_box last">
+                            <a href="index.html#">
+                                <img src="{% static 'assets/images/MS/client-logo-5.png' %}" class="img-fluid" alt="img" />
+                            </a>
+                        </div>
+                        <div class="client_box last">
+                            <a href="index.html#">
+                                <img src="{% static 'assets/images/MS/client-logo-6.png' %}" class="img-fluid" alt="img" />
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--content end-->
-        <!--footer start-->
-        {% include "include/footer.html" %}
+        <!---============spacing==========--->
+        <div class="pd_bottom_90"></div>
+        <!---============spacing==========--->
+    </section>
+    <!---client-section-end --->
 
-        <!--footer  end-->
-        <!----==============content_all_warpper==============--->
+
+
+    </div>
+    <!--content end-->
+    <!--footer start-->
+    {% include "include/footer.html"%}
+    <!--footer  end-->
+    <!----==============content_all_warpper==============--->
     </div>
     <!----==============content_all_warpper end==============--->
     <!----==============mobile_menu_box ==============--->
@@ -561,7 +1036,7 @@
                             class="fi-rs-envelope"></i>mailbox.msbusiness@gmail.com</a>
                 </div>
                 <div class="single-mobile-header-info">
-                    <a href="index.html#" class="theme_btn tp_one">Контакты</a>
+                    <a href="contact.html" class="theme_btn tp_one">Контакты</a>
                 </div>
                 <div class="single-mobile-header-info">
                     <a href="index.html#" class="theme_btn">Service</a>
