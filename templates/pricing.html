@@ -27,23 +27,23 @@
       <!----==============content_all_warpper==============--->
       <!----==============page header==============--->
       <section class="page_header_default pg_bg_cover alignment_center">
-        <div class="bakground_cover" style="background-image:url(assets/images/page-image-1-min.jpg)"></div>
+        <div class="bakground_cover" style="background-image:url({{ pricing.image.url }})"></div>
         <div class="page_header_content">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
                 <div class="banner_title_inner">
                   <div class="title">
-                    <span class="main_tit">Сопровождение Бизнеса</span>
+                    <span class="main_tit">{{ pricing.title }}</span>
                   </div>
                 </div>
               </div>
               <div class="col-lg-12 vankine">
                 <ul class="breadcrumb m-auto">
                   <li>
-                    <a href="index.html">Главная</a>
+                    <a href="index.html">{{ pricing.context }}</a>
                   </li>
-                  <li class="active">Сопровождение Бизнеса</li>
+                  <li class="active">{{ pricing.end }}</li>
                 </ul>
               </div>
             </div>
@@ -63,7 +63,7 @@
               <div class="col-lg-12">
                 <div class="section_title text-center type_one">
                   <div class="title_whole">
-                    <h2 class="title"> Сопровождение Бизнеса </h2>
+                    <h2 class="title">{{ escort_id.title }}</h2>
                   </div>
                 </div>
               </div>
@@ -72,22 +72,22 @@
             <div class="pd_bottom_40"></div>
             <!---============spacing==========--->
             <div class="row">
+              {% for escort in escort_all %}
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="price_box type_one trans">
                   <div class="top">
                     <h4 class="title_24">
-                      <a class="links" href="pricing.html#"> Индивидуальный Подход </a>
+                      <a class="links" href="pricing.html#">{{ escort.title_blog }}</a>
                     </h4>
                   </div>
                   <div class="price">
-                    <img src="assets/images/portfolio/project-2-min.png" alt="" style="max-width: 100%;">
+                    <img src="{{ escort.image.url }}" alt="" style="max-width: 100%;">
                   </div>
                   <hr>
 
-                  <p>В MSBusiness мы верим, что каждый клиент уникален и заслуживает особого внимания. Мы предлагаем
-                    индивидуальный подход к каждому проекту, чтобы удовлетворить ваши уникальные потребности и цели.</p>
+                  <p>{{ escort.context_blog }}</p>
                   <div class="bottom text-center">
-                    <a class="theme_btn" href="pricing.html#"> Select plan <svg width="12" height="12"
+                    <a class="theme_btn" href="pricing.html#">{{ escort.end_blog }}<svg width="12" height="12"
                         viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="white" stroke-width="1.5" stroke-linecap="round"
                           stroke-linejoin="round"></path>
@@ -96,54 +96,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="price_box type_one trans">
-                  <div class="top">
-                    <h4 class="title_24">
-                      <a class="links" href="pricing.html#"> Поддержка клиентов и обратная связь </a>
-                    </h4>
-                  </div>
-                  <div class="price">
-                    <img src="assets/images/portfolio/project-2-min.png" alt="" style="max-width: 100%;">
-                  </div>
-                  <hr>
-
-                  <p>В MSBusiness мы верим, что каждый клиент уникален и заслуживает особого внимания. Мы предлагаем
-                    индивидуальный подход к каждому проекту, чтобы удовлетворить ваши уникальные потребности и цели.</p>
-                  <div class="bottom text-center">
-                    <a class="theme_btn" href="pricing.html#"> Select plan <svg width="12" height="12"
-                        viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="price_box type_one trans">
-                  <div class="top">
-                    <h4 class="title_24">
-                      <a class="links" href="pricing.html#"> Сфокусированные результаты</a>
-                    </h4>
-                  </div>
-                  <div class="price">
-                    <img src="assets/images/portfolio/project-2-min.png" alt="" style="max-width: 100%;">
-                  </div>
-                  <hr>
-
-                  <p>В MSBusiness мы верим, что каждый клиент уникален и заслуживает особого внимания. Мы предлагаем
-                    индивидуальный подход к каждому проекту, чтобы удовлетворить ваши уникальные потребности и цели.</p>
-                  <div class="bottom text-center">
-                    <a class="theme_btn" href="pricing.html#"> Select plan <svg width="12" height="12"
-                        viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
           <!---============spacing==========--->
@@ -160,14 +113,11 @@
             <div class="row">
               <div class="col-lg-7 m-auto text-center">
                 <div class="section_title type_one">
-                  <h4 class="sm_title"> Faqs</h4>
+                  <h4 class="sm_title">{{ question_id.title }}</h4>
                   <div class="title_whole">
-                    <h2 class="title"> Frequently Asked
-                      Questions!</h2>
+                    <h2 class="title"> {{ question_id.context }}</h2>
                   </div>
-                  <p> Sed ut perspiciatis unde natus voluptatem accusantium doloremque laudantium
-                    aperiam
-                    inventore veritatis architecto beatae</p>
+                  <p> {{ question_id.context_title }}</p>
                 </div>
                 <!---============spacing==========--->
                 <div class="pd_bottom_40"></div>
@@ -179,75 +129,41 @@
               <div class="col-lg-6">
                 <section class="block_faq">
                   <div class="accordion-box">
-
+                    {% for question in question_all %}
                     <div class="accordion">
                       <div class="question  faq_header">
                         <div class="question_box ">
-                          <div class="title_no_a_18 trans">Why We Are The Best Company?
-                          </div>
+                          <div class="title_no_a_18 trans">{{ question.blogtitle }}
+                          </div> 
                           <span class="icon_fq trans fi-rs-arrow-small-right"></span>
                         </div>
                       </div>
                       <div class="answer accordion-content">
-                        Serenity Is Multi-Faceted Blockchain Based Ecosystem, Energy
-                        Retailer
-                        For The People, Focusing On The Promotion Of Sustainable Living,
-                        Renewable Energy Production And Smart Energy Grid Utility Services.
+                        {{ question.blogcontext }}
                       </div>
                     </div>
-                    <div class="accordion">
-                      <div class="question  faq_header active">
-                        <div class="question_box">
-                          <div class="title_no_a_18 trans">Build your Business ?</div>
-                          <span class="icon_fq trans fi-rs-arrow-small-right"></span>
-                        </div>
-                      </div>
-                      <div class="answer accordion-content">
-                        Serenity Is Multi-Faceted Blockchain Based Ecosystem, Energy
-                        Retailer
-                        For The People, Focusing On The Promotion Of Sustainable Living,
-                        Renewable Energy Production And Smart Energy Grid Utility Services.
-                      </div>
-                    </div>
-                    <div class="accordion active-block">
-                      <div class="question  faq_header">
-                        <div class="question_box ">
-                          <div class="title_no_a_18 trans">How Much Experience Our Team
-                            Member
-                            ?</div>
-                          <span class="icon_fq trans fi-rs-arrow-small-right"></span>
-                        </div>
-                      </div>
-                      <div class="answer accordion-content current">
-                        Serenity Is Multi-Faceted Blockchain Based Ecosystem, Energy
-                        Retailer
-                        For The People, Focusing On The Promotion Of Sustainable Living,
-                        Renewable Energy Production And Smart Energy Grid Utility Services.
-                      </div>
-                    </div>
+                    {% endfor %}
                   </div>
                 </section>
               </div>
               <div class="col-lg-6">
                 <section class="block_faq">
                   <div class="accordion-box">
+                    {% for question2 in question2_all %}
                     <div class="accordion active-block">
                       <div class="question  faq_header active">
                         <div class="question_box">
-                          <div class="title_no_a_18 trans">How Much Experience Our Team
-                            Member
-                            ?</div>
+                          <div class="title_no_a_18 trans">{{ question2.blog_title }}
+                            </div>
                           <span class="icon_fq trans fi-rs-arrow-small-right"></span>
                         </div>
                       </div>
                       <div class="answer accordion-content current">
-                        Serenity Is Multi-Faceted Blockchain Based Ecosystem, Energy
-                        Retailer
-                        For The People, Focusing On The Promotion Of Sustainable Living,
-                        Renewable Energy Production And Smart Energy Grid Utility Services.
+                        {{ question2.blog_context }}
                       </div>
                     </div>
-                    <div class="accordion">
+                    {% endfor %}
+                    <!-- <div class="accordion">
                       <div class="question  faq_header ">
                         <div class="question_box ">
                           <div class="title_no_a_18 trans">What Is Insurance Services?
@@ -274,7 +190,7 @@
                         Quis autem vel eum iure reprehenderit ea voluptate esse molestiae
                         consequatur veillum voluptas nullaes
                       </div>
-                    </div>
+                    </div> -->
 
                   </div>
                 </section>
