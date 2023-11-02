@@ -225,3 +225,75 @@ class Business(models.Model):
     class Meta:
         verbose_name = ''
         verbose_name_plural = 'Настройка Бизнеса'
+
+
+
+
+
+#####################################################   SERVICE-STYLE
+
+class Style(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка'
+    )
+    context = models.CharField(
+        max_length=155,
+        verbose_name='Описание'
+    )
+    image = models.ImageField(
+        upload_to='style/',
+        verbose_name='Фото'
+    )
+    end = models.CharField(
+        max_length=100,
+        verbose_name='Конец'
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name =''
+        verbose_name_plural = 'Стиль'
+
+ICON = (
+    ("Локальная Экспертиза, Мировой Опыт", "Локальная Экспертиза, Мировой Опыт"),
+    ("Преимущество Многокультурного Окружения", "Преимущество Многокультурного Окружения"),
+    ("Сотрудничество Через Расстояние", "Сотрудничество Через Расстояние"),
+    ("Мировые Достижения", "Мировые Достижения"),
+    ("Местное присутствие", "Местное присутствие"),
+    ("Многогранное понимание культур", "Многогранное понимание культур"),
+)
+
+class Success(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка'
+    )
+    text = models.TextField(
+        verbose_name='Текст'
+    )
+    blog_title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка Блога'
+    )
+    blog_context = models.TextField(
+        verbose_name='Текст Блога'
+    )
+    icon = models.CharField(
+        choices=ICON,
+        max_length=155,
+        verbose_name='Выберите Иконку'
+    )
+    blog_number = models.CharField(
+        max_length=10,
+        verbose_name='Номер Блога'
+    )
+  
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = 'ВАШ УСПЕХ'
