@@ -230,7 +230,7 @@ class Business(models.Model):
 
 
 
-#####################################################   SERVICE-STYLE
+#####################################################   SERVICE-STYLE- 4
 
 class Style(models.Model):
     title = models.CharField(
@@ -297,3 +297,80 @@ class Success(models.Model):
     class Meta:
         verbose_name = ''
         verbose_name_plural = 'ВАШ УСПЕХ'
+
+
+
+#####################################################   SERVICE-STYLE- 6
+
+class Style6(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка'
+    )
+    context = models.CharField(
+        max_length=155,
+        verbose_name='Описание'
+    )
+    image = models.ImageField(
+        upload_to='style6/',
+        verbose_name='Фото'
+    )
+    end = models.CharField(
+        max_length=155,
+        verbose_name='Конец'
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = 'Стиль 6'
+
+
+ICON_INSURANCE = (
+    ('Страхование путешествий', 'Страхование путешествий'),
+    ('Медицинский Страхование', 'Медицинский Страхование'),
+    ('Страхование брака', 'Страхование брака'),
+    ('Страхование жизни', 'Страхование жизни'),
+    ('Страхование дома', 'Страхование дома'),
+    ('Страховка от пожара', 'Страховка от пожара')
+
+)
+
+class Insurance(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка'
+    )
+    context = models.CharField(
+        max_length=255,
+        verbose_name='Описание'
+    )
+    text = models.TextField(
+        verbose_name='Текст'
+    )
+    blog_title = models.CharField(
+        max_length=255,
+        verbose_name='Заголовка Блога'
+    )
+    blog_context = models.CharField(
+        max_length=300,
+        verbose_name='Описание Блога'
+    )
+    image = models.ImageField(
+        upload_to='insurance/',
+        verbose_name='Фото'
+    )
+    icon = models.CharField(
+        choices=ICON_INSURANCE,
+        max_length=100,
+        verbose_name='Выберите иконку'
+    )
+
+    def __str__(self):
+         return self.title
+    
+    class Meta:
+         verbose_name = ''
+         verbose_name_plural = 'Страхование'

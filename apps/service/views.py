@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.service.models import Main, Services, ServiceTitle, ServiceDetails, Team, TeamWide, Consulting, Business, Style, Success
+from apps.service.models import Main, Services, ServiceTitle, ServiceDetails, Team, TeamWide, Consulting, Business, Style, Success, Style6, Insurance
 # Create your views here.
 def service(request):
     # setti
@@ -21,8 +21,15 @@ def servise_details(request):
     return render(request, 'service-details.html', locals())
 
 
-def servicestyle4(request):
+def service_style4(request):
     style = Style.objects.latest('id')
     success_id = Success.objects.latest('id')
     success_all = Success.objects.all()
     return render(request, 'service-style-4.html', locals())
+
+
+def service_style6(request):
+    style = Style6.objects.latest('id')
+    insurance_id = Insurance.objects.latest('id')
+    insurance_all = Insurance.objects.all()
+    return render(request, 'service-style-6.html', locals())
