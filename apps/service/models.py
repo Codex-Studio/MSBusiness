@@ -71,6 +71,14 @@ class ServiceTitle(models.Model):
         verbose_name_plural = 'Заголовка Блога'
 
 
+
+
+
+
+
+
+#####################################SERVICE_DETAILS
+
 class ServiceDetails(models.Model):
     title = models.CharField(
         max_length=155,
@@ -110,6 +118,18 @@ class Team(models.Model):
     image = models.ImageField(
         upload_to='team/',
         verbose_name='Фотография команды'
+    )
+    kolonki = models.CharField(
+        max_length=100,
+        verbose_name='Колонки'
+    )
+    kolonki2 = models.CharField(
+        max_length=100,
+        verbose_name='Колонки'
+    )
+    kolonki3 = models.CharField(
+        max_length=100,
+        verbose_name='Колонки'
     )
 
     def __str__(self):

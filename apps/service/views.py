@@ -10,7 +10,8 @@ def service(request):
 
 def servise_details(request):
     service_details = ServiceDetails.objects.latest('id')
-    team = Team.objects.latest('id')
+    team_id = Team.objects.latest('id')
+    team_all = Team.objects.all()
     wide_id = TeamWide.objects.latest('id')
     wide_all = TeamWide.objects.all()
     consulting_all = Consulting.objects.all()
