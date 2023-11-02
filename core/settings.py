@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'apps.blog',
     'apps.contact',
     'apps.pricind',
-    
+    'apps.team',
 ]
 
 MIDDLEWARE = [

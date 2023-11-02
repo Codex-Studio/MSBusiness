@@ -48,7 +48,7 @@
                                                 </h1>
 
                                                 <div class="button_all animate_down">
-                                                    <a href="index.html#" class="theme_btn color_white  animated">
+                                                    <a href="index" class="theme_btn color_white  animated">
                                                         {{ main.context }}</a>
                                                 </div>
                                             </div>
@@ -89,7 +89,7 @@
                                 {% for job in job_all %}
                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                     <div class="service_box type_two hover_1_get">
-                                        <a href="service.html" class="img_bx">
+                                        <a href="service" class="img_bx">
                                             <div class="image trans hover_1">
                                                 <img src="{{ job.image.url }}" class="img-fluid"
                                                     alt="service-image" />
@@ -113,7 +113,7 @@
                                             </div>
                                             <div class="steps trans">{{ job.num }}</div>
                                             <h4 class="title_24 trans">
-                                                <a href="service.html">
+                                                <a href="service">
                                                     {{ job.image_title }}
                                                 </a>
                                             </h4>
@@ -173,7 +173,7 @@
                                 <div class="pd_bottom_30"></div>
                                 <!---============spacing==========--->
                                 <div class="theme_btn_all">
-                                    <a href="#index.html#" class="theme_btn">
+                                    <a href="#index" class="theme_btn">
                                         {{ about_id.end_about }}
                                         <span> <i class=" fi-rr-arrow-small-up"></i></span>
                                     </a>
@@ -219,12 +219,12 @@
                                             <div class="d-flex trans">
                                                 <div class="content">
                                                     <div class="title_22">
-                                                        <a href="#service.html">
+                                                        <a href="#service">
                                                             {{ descriptions.blog_title }}</a>
                                                     </div>
                                                     <p class="trans">
                                                         {{ descriptions.blog_context }}</p>
-                                                    <a href="#service.html" class="rd_more">
+                                                    <a href="#service" class="rd_more">
                                                         {{ descriptions.end_blog }}
                                                         <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
                                                             xmlns="http://www.w3.org/2000/svg">
@@ -948,7 +948,7 @@
                     <div class="pd_bottom_30"></div>
                     <!---============spacing==========--->
                     <div class="theme_btn_all">
-                        <a href="blog.html" class="theme_btn big rotate">
+                        <a href="blog" class="theme_btn big rotate">
                             {{ klient_id.end_coment }} <span> <i class="fi-rr-arrow-small-up"></i></span>
                         </a>
                     </div>
@@ -960,36 +960,11 @@
                     <div class="client_grid">
                         {% for klient in klient_all %}
                         <div class="client_box">
-                            <a href="index.html#">
+                            <a href="index">
                                 <img src="{{ klient.image.url }}" class="img-fluid" alt="img" />
                             </a>
                         </div>
                         {% endfor %}
-                        <!-- <div class="client_box">
-                            <a href="index.html#">
-                                <img src="{% static 'assets/images/MS/client-logo-2.png' %}" class="img-fluid" alt="img" />
-                            </a>
-                        </div>
-                        <div class="client_box">
-                            <a href="index.html#">
-                                <img src="{% static 'assets/images/MS/client-logo-3.png' %}" class="img-fluid" alt="img" />
-                            </a>
-                        </div>
-                        <div class="client_box">
-                            <a href="index.html#">
-                                <img src="{% static 'assets/images/MS/client-logo-7.svg' %}" class="img-fluid" alt="img" />
-                            </a>
-                        </div>
-                        <div class="client_box last">
-                            <a href="index.html#">
-                                <img src="{% static 'assets/images/MS/client-logo-5.png' %}" class="img-fluid" alt="img" />
-                            </a>
-                        </div>
-                        <div class="client_box last">
-                            <a href="index.html#">
-                                <img src="{% static 'assets/images/MS/client-logo-6.png' %}" class="img-fluid" alt="img" />
-                            </a>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -1036,7 +1011,7 @@
                             class="fi-rs-envelope"></i>mailbox.msbusiness@gmail.com</a>
                 </div>
                 <div class="single-mobile-header-info">
-                    <a href="contact.html" class="theme_btn tp_one">Контакты</a>
+                    <a href="contact" class="theme_btn tp_one">Контакты</a>
                 </div>
                 <div class="single-mobile-header-info">
                     <a href="index.html#" class="theme_btn">Service</a>
