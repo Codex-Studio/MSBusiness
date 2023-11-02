@@ -25,20 +25,20 @@
                 <!----==============content_all_warpper==============--->
                 <!----==============page header==============--->
                 <section class="page_header_default pg_bg_cover alignment_center">
-                    <div class="bakground_cover" style="background-image:url(assets/images/page-image-1-min.jpg)"></div>
+                    <div class="bakground_cover" style="background-image:url({{ main.image.url }})"></div>
                     <div class="page_header_content">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="banner_title_inner">
                                         <div class="title">
-                                            <span class="main_tit">Team</span> </div>
+                                            <span class="main_tit">{{ main.title }}</span> </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 vankine">
                                     <ul class="breadcrumb m-auto">
-                                        <li><a href="team.html#">Home</a> </li>
-                                        <li class="active">Team</li>
+                                        <li><a href="team.html#">{{ main.context }}</a> </li>
+                                        <li class="active">{{ main.end }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -58,9 +58,9 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="section_title text-center type_one">
-                                        <h4 class="sm_title"> Our Team Member</h4>
+                                        <h4 class="sm_title">{{ team_id.title }}</h4>
                                         <div class="title_whole">
-                                            <h2 class="title"> Meet Our Amazing Team</h2>
+                                            <h2 class="title">{{ team_id.context }}</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -69,17 +69,18 @@
                             <div class="pd_bottom_40"></div>
                             <!---============spacing==========--->
                             <div class="row">
+                                {% for team in team_all %}
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                                     <div class="team_box type_two">
                                         <div class="team_box_inner">
                                             <div class="contnet">
                                                 <h6 class="title_22">
                                                     <a href="team.html#">
-                                                        Harry R. Blackston </a></h6>
-                                                <p> Senior Manager</p>
+                                                        {{ team.blog_title }} </a></h6>
+                                                <p>{{ team.blog_context }}</p>
                                             </div>
                                             <div class="image_box">
-                                                <img src="assets/images/team/team-1-min.png" alt="img"
+                                                <img src="{{ team.image_blog.url }}" alt="img"
                                                     class="img-fluid" />
 
                                                 <div class="social-icons trans">
@@ -106,127 +107,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="team_box type_two">
-                                        <div class="team_box_inner">
-                                            <div class="contnet">
-                                                <h6 class="title_22">
-                                                    <a href="team.html#">
-                                                        Guillermo V. Hanson </a></h6>
-                                                <p> Business Consultant</p>
-                                            </div>
-                                            <div class="image_box">
-                                                <img src="assets/images/team/team-2-min.png" alt="img"
-                                                    class="img-fluid" />
-                                                <div class="social-icons trans">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab  fa-facebook"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-twitter"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-skype"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-instagram"></i>
-                                                            </a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="team_box type_two">
-                                        <div class="team_box_inner">
-                                            <div class="contnet">
-                                                <h6 class="title_22">
-                                                    <a href="team.html#">
-                                                        Michael A. Yates </a></h6>
-                                                <p> Junior Manager</p>
-                                            </div>
-                                            <div class="image_box">
-                                                <img src="assets/images/team/team-3-min.png" alt="img"
-                                                    class="img-fluid" />
-                                                <div class="social-icons trans">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-facebook"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-twitter"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-skype"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-instagram"></i>
-                                                            </a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="team_box type_two">
-                                        <div class="team_box_inner">
-                                            <div class="contnet">
-                                                <h6 class="title_22">
-                                                    <a href="team.html#">
-                                                        Mark M. McClure </a></h6>
-                                                <p> Sr Engineer</p>
-                                            </div>
-                                            <div class="image_box">
-                                                <img src="assets/images/team/team-4-min.png" alt="img"
-                                                    class="img-fluid" />
-                                                <div class="social-icons trans">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-facebook"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-twitter"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-skype"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-instagram"></i>
-                                                            </a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                             <div class="row">
+                                {% for team2 in team_all %}
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                                     <div class="team_box type_two">
                                         <div class="team_box_inner">
                                             <div class="contnet">
                                                 <h6 class="title_22">
                                                     <a href="team.html#">
-                                                        Harry R. Blackston </a></h6>
-                                                <p> Senior Manager</p>
+                                                        {{ team2.blog_title2 }} </a></h6>
+                                                <p>{{ team2.blog_context2 }}</p>
                                             </div>
                                             <div class="image_box">
-                                                <img src="assets/images/team/team-5.png" alt="img" class="img-fluid" />
+                                                <img src="{{ team2.image_blog2.url }}" alt="img" class="img-fluid" />
 
                                                 <div class="social-icons trans">
                                                     <ul>
@@ -252,111 +147,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="team_box type_two">
-                                        <div class="team_box_inner">
-                                            <div class="contnet">
-                                                <h6 class="title_22">
-                                                    <a href="team.html#">
-                                                        Guillermo V. Hanson </a></h6>
-                                                <p> Business Consultant</p>
-                                            </div>
-                                            <div class="image_box">
-                                                <img src="assets/images/team/team-6.png" alt="img" class="img-fluid" />
-                                                <div class="social-icons trans">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab  fa-facebook"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-twitter"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-skype"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-instagram"></i>
-                                                            </a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="team_box type_two">
-                                        <div class="team_box_inner">
-                                            <div class="contnet">
-                                                <h6 class="title_22">
-                                                    <a href="team.html#">
-                                                        Michael A. Yates </a></h6>
-                                                <p> Junior Manager</p>
-                                            </div>
-                                            <div class="image_box">
-                                                <img src="assets/images/team/team-7.png" alt="img" class="img-fluid" />
-                                                <div class="social-icons trans">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-facebook"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-twitter"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-skype"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-instagram"></i>
-                                                            </a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="team_box type_two">
-                                        <div class="team_box_inner">
-                                            <div class="contnet">
-                                                <h6 class="title_22">
-                                                    <a href="team.html#">
-                                                        Mark M. McClure </a></h6>
-                                                <p> Sr Engineer</p>
-                                            </div>
-                                            <div class="image_box">
-                                                <img src="assets/images/team/team-8.png" alt="img" class="img-fluid" />
-                                                <div class="social-icons trans">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-facebook"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-twitter"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-skype"></i>
-                                                            </a></li>
-                                                        <li>
-                                                            <a href="team.html#" class="m_icon">
-                                                                <i class="fab fa-instagram"></i>
-                                                            </a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                         <!---============spacing==========--->
@@ -404,77 +195,6 @@
                             </div>
                         </div>
                     </section>
-                    <!--content-->
-                    <!--service-->
-                    <section class="service-section bg_light_1">
-                        <!---============spacing==========--->
-                        <div class="pd_top_170"></div>
-                        <!---============spacing==========--->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="section_title text-center type_one">
-                                        <h4 class="sm_title"> Great Offer For Customer</h4>
-                                        <div class="title_whole">
-                                            <h2 class="title"> Amazing Features For Insurance</h2>
-                                        </div>
-                                    </div>
-                                    <!---============spacing==========--->
-                                    <div class="pd_top_40"></div>
-                                    <!---============spacing==========--->
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="icon_box_only  type_seven">
-                                        <div class="icon">
-                                            <i class=" flaticon-insurance-2"></i></div>
-                                        <div class="title_24">
-                                            <a href="team.html#">
-                                                Insurance Services </a></div>
-                                        <p>Sed ut perspiciatis unde omnis
-                                            natus errr voluptatem accusantium doloremue laudant totam</p>
-                                        <a class="rd_more" href="team.html#">
-                                            Read More<i class="icontb fi-rs-arrow-small-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="icon_box_only  type_seven">
-                                        <div class="icon">
-                                            <i class=" flaticon-insurance-2"></i></div>
-                                        <div class="title_24">
-                                            <a href="team.html#">
-                                                Insurance Services </a></div>
-                                        <p>Sed ut perspiciatis unde omnis
-                                            natus errr voluptatem accusantium doloremue laudant totam</p>
-                                        <a class="rd_more" href="team.html#">
-                                            Read More<i class="icontb fi-rs-arrow-small-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="icon_box_only   type_seven">
-                                        <div class="icon">
-                                            <i class=" flaticon-iteration"></i></div>
-                                        <div class="title_24">
-                                            <a href="team.html#">
-                                                Easy &amp; Fast Process </a></div>
-                                        <p>Sed ut perspiciatis unde omnis
-                                            natus errr voluptatem accusantium doloremue laudant totam</p>
-                                        <a class="rd_more" href="team.html#">
-                                            Read More<i class="icontb fi-rs-arrow-small-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!---============spacing==========--->
-                        <div class="pd_bottom_60"></div>
-                        <!---============spacing==========--->
-                    </section>
-                    <!--service-->
-
                 </div>
                 <!--content end-->
                 <!--footer start-->
@@ -646,4 +366,4 @@
         <!----=============page_wapper end=============---->
 
         <!----=================Script================---->
-        {% endblock %}
+        {% endblock %}  
