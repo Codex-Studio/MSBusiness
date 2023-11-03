@@ -67,3 +67,127 @@ class Team(models.Model):
         verbose_name = ''
         verbose_name_plural = 'Блога Нашей команды'
 
+
+
+##################################################TEAM-DETAILS
+
+class TeamDetails(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка'
+    )
+    context = models.CharField(
+        max_length=155,
+        verbose_name='Описание'
+    )
+    image = models.ImageField(
+        upload_to='team/details',
+        verbose_name='фото'
+    )
+    end = models.CharField(
+        max_length=155,
+        verbose_name='Конец'
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = 'ДЕтально Просмотр Команды'
+
+class Team_Details(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка'
+    )
+    context = models.CharField(
+        max_length=155,
+        verbose_name='Описание'
+    )
+    text = models.TextField(
+        max_length=155,
+        verbose_name='Текс'
+    )
+    image = models.ImageField(
+        upload_to='team/details1',
+        verbose_name='Фото'
+    )
+    text1 = models.CharField(
+        max_length=100,
+        verbose_name='Колонка 1'
+    )
+    text2 = models.CharField(
+        max_length=100,
+        verbose_name='Колонка 2'
+    )
+    text3 = models.CharField(
+        max_length=100,
+        verbose_name='Колонка 3'
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = 'Настройка Команды'
+
+class Experience(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка'
+    )
+    context = models.CharField(
+        max_length=155,
+        verbose_name='Описание'
+    )
+    text = models.CharField(
+        max_length=255,
+        verbose_name='Текст'
+    )
+    image = models.ImageField(
+        upload_to='experience/',
+        verbose_name='Фото'
+    )
+    kolonki1 = models.CharField(
+        max_length=155,
+        verbose_name='Колонка - 1'
+    )
+    kolonki2 = models.CharField(
+        max_length=155,
+        verbose_name='Колонка - 2'
+    )
+
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = 'Наш Опыт'
+
+class GetInTouch(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка'
+    )
+    context = models.CharField(
+        max_length=155,
+        verbose_name='Описание'
+    )
+    text = models.CharField(
+        max_length=255,
+        verbose_name='Текст'
+    )
+    end = models.CharField(
+        max_length=155,
+        verbose_name='Конец'
+    )
+
+
+    def __str__(self):
+        return self.text
+    
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = 'Связатьс с нами'
