@@ -15,7 +15,7 @@
                             </svg>
                             <!--logo-shape-->
                             <!--logo-->
-                            <a href="index.html" class="logo navbar-brand">
+                            <a href=" {% url 'index' %}" class="logo navbar-brand">
                                 <img src="{% static 'assets/images/MS/Logologobook2.png' %}" alt="Vankine"
                                     class="logo_default">
                             </a>
@@ -26,7 +26,7 @@
                         <div class="navbar_content d-flex align-items-center">
                             <ul class="navbar_nav">
                                 <li class="menu-item nav-item ">
-                                    <a href="index.html" class="nav_link">
+                                    <a href="{% url 'index' %}" class="nav_link">
                                         <span class="text-link"> Главная страница </span>
                                     </a>
                               
@@ -77,7 +77,7 @@
 
                                 </li>
                                 <li class="menu-item menu-item-has-children dropdown  nav-item">
-                                    <a href="service" class="nav_link">
+                                    <a href="{% url 'service' %}" class="nav_link">
                                         <span class="text-link">
                                             Наши услуги
                                         </span>
@@ -136,7 +136,7 @@
 
                                 </li>
                                 <li class="menu-item ">
-                                    <a href="blog" class="nav_link">
+                                    <a href="{% url 'blog' %}" class="nav_link">
                                         <span class="text-link">
                                             Наши Проекты
                                         </span>
@@ -145,7 +145,7 @@
                                 </li>
                                 <li
                                     class="menu-item">
-                                    <a href="about" class="nav_link">
+                                    <a href="{% url 'about' %}" class="nav_link">
                                         <span class="text-link">
                                             О нас
                                         </span>
@@ -169,7 +169,7 @@
                             </div>
                             <!--menu icon-->
                             <div class="button">
-                                <a href="contact" class="theme_btn">
+                                <a href="{% url 'contact' %}" class="theme_btn">
                                     Контакты
                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +179,7 @@
                                 </a>
                             </div>
                             <div class="contact-toggler">
-                                <a href="my-account" class="profile_btn">
+                                <a href="{% url 'register' %}" class="profile_btn">
                                     <img src="{% static 'assets/images/MS/Microsoft_Account_Logo.svg' %}" alt="" style="width: 50px;">
                                 </a>
                                 </svg>
@@ -201,7 +201,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-12 col-md-5 col-sm-5 col-xs-5">
                         <div class="logobox">
-                            <a href="index.html" class="logo navbar-brand">
+                            <a href="{% url 'index' %}" class="logo navbar-brand">
                                 <img src="{% static 'assets/images/MS/Logologobook2.png' %}" alt="Vankine"
                                     class="logo_default">
                             </a>
@@ -212,7 +212,7 @@
                             <ul class="navbar_nav">
                                 <li
                                     class="menu-item nav-item ">
-                                    <a href="index.html" class="nav_link">
+                                    <a href="{% url 'index' %}" class="nav_link">
                                         <span class="text-link"> Главная страница </span>
                                     </a>
                                  
@@ -263,7 +263,7 @@
 
                                 </li>
                                 <li class="menu-item menu-item-has-children dropdown  nav-item">
-                                    <a href="service" class="nav_link">
+                                    <a href="{% url 'service' %}" class="nav_link">
                                         <span class="text-link">
                                             Наши услуги
                                         </span>
@@ -322,7 +322,7 @@
 
                                 </li>
                                 <li class="menu-item ">
-                                    <a href="blog" class="nav_link">
+                                    <a href="{% url 'blog' %}" class="nav_link">
                                         <span class="text-link">
                                             Наши Проекты
                                         </span>
@@ -331,7 +331,7 @@
                                 </li>
                                 <li
                                     class="menu-item  ">
-                                    <a href="about" class="nav_link">
+                                    <a href="{% url 'about' %}" class="nav_link">
                                         <span class="text-link">
                                             О нас
                                         </span>
@@ -355,7 +355,7 @@
                             </div>
                             <!--menu icon-->
                             <div class="button">
-                                <a href="contact" class="theme_btn">
+                                <a href="{% url 'contact' %}" class="theme_btn">
                                     Контакты
                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -365,7 +365,7 @@
                                 </a>
                             </div>
                             <div class="contact-toggler">
-                                <a href="my-account" class="profile_btn">
+                                <a href="{% url 'register' %}" class="profile_btn">
                                     <img src="{% static 'assets/images/MS/Microsoft_Account_Logo.svg' %}" alt="" style="width: 50px;">
                                 </a>
                                 </svg>
