@@ -31,7 +31,7 @@ class Service(models.Model):
 class Details(models.Model):
     title = models.CharField(
         max_length=155,
-        verbose_name='Заголовка'
+        verbose_name='Заголовка',
         blank=True, null=True
     ) 
     context = models.TextField(
@@ -65,7 +65,7 @@ class Details(models.Model):
     )
     business_image = models.ImageField(
         upload_to='business',
-        verbose_name='Фото'
+        verbose_name='Фото',
         blank=True, null=True
     )
 
