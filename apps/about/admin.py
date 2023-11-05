@@ -1,10 +1,7 @@
 from django.contrib import admin
-from apps.about.models import About, Companion,Develop, Achievement, Comand, Klient, Requests
-# Register your models here.
+from apps.about.models import About, Companion, Business, Team
+# Register your models here.q
 admin.site.register(About)
 admin.site.register(Companion)
-admin.site.register(Develop)
-admin.site.register(Achievement)
-admin.site.register(Comand)
-admin.site.register(Klient)
-admin.site.register(Requests)
+admin.site.register(Business)
+admin.site.register(Team)

@@ -1,16 +1,13 @@
 from django.shortcuts import render
-from apps.about.models import About, Companion, Develop, Achievement, Comand, Klient, Requests
+from apps.about.models import About, Companion, Business, Team
+from apps.settings.models import Partner
 # Create your views here.
 def about(request):
     about = About.objects.latest('id')
-    comp = Companion.objects.latest('id')
-    develop = Develop.objects.latest('id')
-    achievemant_all = Achievement.objects.all()
-    achievemant_id = Achievement.objects.latest('id')
-    comand_all = Comand.objects.all()
-    comand_id = Comand.objects.latest('id')
-    klient_id = Klient.objects.latest('id')
-    klient_all = Klient.objects.all()
-    request_id = Requests.objects.latest('id')
-    request_all = Requests.objects.all()
+    companio = Companion.objects.latest('id')
+    business = Business.objects.latest('id')
+    team_all = Team.objects.all()[:4]
+    team_all2= Team.objects.all()[4:9]
+    partners_all = Partner.objects.all()
+    partners_id = Partner.objects.all()
     return render(request, 'about-us.html', locals())

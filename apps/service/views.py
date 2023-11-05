@@ -1,35 +1,24 @@
-from django.shortcuts import render
-from apps.service.models import Main, Services, ServiceTitle, ServiceDetails, Team, TeamWide, Consulting, Business, Style, Success, Style6, Insurance
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from apps.service.models import Service
+from apps.service.forms import UserRegistarForm
 # Create your views here.
+
 def service(request):
-    # setti
-    main = Main.objects.latest('id')
-    service_id = ServiceTitle.objects.latest("id")
-    service_all = Services.objects.all()
+    service_all = Service.objects.all()
     return render(request, 'service.html', locals())
 
-def servise_details(request):
-    service_details = ServiceDetails.objects.latest('id')
-    team_id = Team.objects.latest('id')
-    team_all = Team.objects.all()
-    wide_id = TeamWide.objects.latest('id')
-    wide_all = TeamWide.objects.all()
-    consulting_all = Consulting.objects.all()
-    consulting_id = Consulting.objects.latest('id')
-    busines_id = Business.objects.latest('id')
-    busines_all = Business.objects.all()
-    return render(request, 'service-details.html', locals())
+#код для регистраций 
+def register(request):
 
+    if request.method == "POST":
+        user_form = UserRegistarForm(request.POST)
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)
+            new_user.set_password(user_form.cleaned_data["password"])
+            new_user.save()
+            return render(request, "my-account.html", {"user": new_user}, 'Пароль не совпадает, или такой аккаунт уже существует')
+    else:
+        user_form = UserRegistarForm()
 
-def service_style4(request):
-    style = Style.objects.latest('id')
-    success_id = Success.objects.latest('id')
-    success_all = Success.objects.all()
-    return render(request, 'service-style-4.html', locals())
-
-
-def service_style6(request):
-    style = Style6.objects.latest('id')
-    insurance_id = Insurance.objects.latest('id')
-    insurance_all = Insurance.objects.all()
-    return render(request, 'service-style-6.html', locals())
+    return render(request, "my-account.html", {"form": user_form}, 'Вы успешно прошли регистрацию')

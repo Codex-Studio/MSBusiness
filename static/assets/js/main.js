@@ -594,3 +594,10 @@ jQuery(window).on('load', function() {
 });   
 })(jQuery);
 
+document.getElementById('profile_checkbox').onchange = (event)=>{
+    if(event.target.checked){
+        document.getElementById('profile_pass').type = 'text'
+    }else{
+        document.getElementById('profile_pass').type = 'password'
+    }
+}

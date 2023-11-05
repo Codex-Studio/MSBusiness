@@ -1,4 +1,4 @@
-{% extends "include/homepage.html" %}
+{% extends 'include/homepage.html' %}
 {% load static %}
 {% block content %}
  
@@ -18,27 +18,27 @@
             </div>
             <!----=============Preloader end=============---->
             <!----=============Header=============---->
-            {% include "include/header.html" %}
+            {% include 'include/header.html' %}
             <!----==============sticky header end==============--->
             <!----==============content_all_warpper==============--->
             <div id="wrapper_full" class="content_all_warpper">
                 <!----==============content_all_warpper==============--->
                 <!----==============page header==============--->
                 <section class="page_header_default pg_bg_cover alignment_center">
-                    <div class="bakground_cover" style="background-image:url({{ contact.image.url }})"></div>
+                    <div class="bakground_cover" style="background-image:url({% static 'assets/images/page-image-1-min.jpg' %})"></div>
                     <div class="page_header_content">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="banner_title_inner">
                                         <div class="title">
-                                            <span class="main_tit">{{ contact.title }}</span> </div>
+                                            <span class="main_tit">Контакты</span> </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 vankine">
                                     <ul class="breadcrumb m-auto">
-                                        <li><a href="index">{{ contact.context }}</a> </li>
-                                        <li class="active">{{ contact.end_main }}</li>
+                                        <li><a href="index.html">Главная</a> </li>
+                                        <li class="active">Контакты</li>
                                     </ul>
                                 </div>
                             </div>
@@ -55,15 +55,14 @@
                         <!---============spacing==========--->
                         <div class="container">
                             <div class="row">
-                                {% for contact in contact_all %}
                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                     <div class="contact_box_content">
                                         <div class="icon trans">
-                                            <img src="{{ contact.image.url }}" alt="img" class="img-fluid">
+                                            <img src="{% static 'assets/images/cont-1.png' %}" alt="img" class="img-fluid">
                                         </div>
                                         <div class="contact-infor">
-                                            <h6 class="title_no_a_24">{{ contact.title }}</h6>
-                                            <span>{{ contact.context }}
+                                            <h6 class="title_no_a_24"> Локация</h6>
+                                            <span>Город Бишкек, Улица Московская, Дом 15
                                             </span>
                                         </div>
                                     </div>
@@ -71,7 +70,37 @@
                                     <div class="pd_bottom_30"></div>
                                     <!---============spacing==========--->
                                 </div>
-                                {% endfor %}
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="contact_box_content">
+                                        <div class="icon trans">
+                                            <img src="{% static 'assets/images/cont-2.png' %}" alt="img" class="img-fluid">
+                                        </div>
+                                        <div class="contact-infor">
+                                            <h6 class="title_no_a_24">Email</h6>
+                                            <a href="mailto:support@gmail.com">mailbox.msbusiness@gmail.com
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_30"></div>
+                                    <!---============spacing==========--->
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="contact_box_content">
+                                        <div class="icon trans">
+                                            <img src="{% static 'assets/images/cont-3.png' %}" alt="img" class="img-fluid">
+                                        </div>
+                                        <div class="contact-infor">
+                                            <h6 class="title_no_a_24">Тел. Номер</h6>
+                                            <a href="tel:+996777777777">+996 (777) 777 777
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_30"></div>
+                                    <!---============spacing==========--->
+                                </div>
                             </div>
                         </div>
                         <!---============spacing==========--->
@@ -91,9 +120,9 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-12">
                                     <div class="section_title type_one">
-                                        <h4 class="sm_title">{{ contact_as_id.title }}</h4>
+                                        <h4 class="sm_title"> Связаться</h4>
                                         <div class="title_whole">
-                                            <h2 class="title">{{ contact_as_id.context }}</h2>
+                                            <h2 class="title"> Нужна Помощь?</h2>
                                         </div>
 
                                     </div>
@@ -125,30 +154,30 @@
                                                     <div class="row">
                                                         <div class="col-md-6 col-sm-12">
                                                             <div class="form-group">
-                                                                <input type="text" name="name" placeholder="ФИО *" required="required" data-error="Enter Your Name">
+                                                                <input type="text" name="name" placeholder="{{ contact_id.name_surname }}" required="required" data-error="Enter Your Name">
                                                                 <div class="help-block with-errors"></div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-sm-12">
                                                             <div class="form-group">
-                                                                <input type="text" name="email" required="required" placeholder="Email *" data-error="Enter Your Email Id">
+                                                                <input type="text" name="email" required="required" placeholder="{{ contact_id.email }}" data-error="Enter Your Email Id">
                                                                 <div class="help-block with-errors"></div>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <div class="form-group">
-                                                                <input type="text" name="subject" required="required" placeholder=" Причина  (необязательно)">
+                                                                <input type="text" name="subject" required="required" placeholder=" {{ contact_id.phone }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <div class="form-group">
-                                                                <textarea name="message" placeholder="Дополнительная информация " rows="3" required="required" data-error="Please, leave us a message."></textarea>
+                                                                <textarea name="message" placeholder="{{ contact_id.message }} " rows="3" required="required" data-error="Please, leave us a message."></textarea>
                                                                 <div class="help-block with-errors"></div>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <div class="form-group mg_top apbtn">
-                                                                <button class="theme_btn" type="submit">{{ contact_as_id.end_contact }}</button>
+                                                                <button class="theme_btn" type="submit">Отправить</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -170,7 +199,7 @@
                 </div>
                 <!--content end-->
                 <!--footer start-->
-                {% include "include/footer.html"%}
+                {% include 'include/footer.html' %}
                   <!--footer  end-->
                   <!----==============content_all_warpper==============--->
                 </div>
@@ -237,5 +266,4 @@
         </div>
         <!----=============page_wapper end=============---->
 
-        <!----=================Script================---->
         {% endblock %}

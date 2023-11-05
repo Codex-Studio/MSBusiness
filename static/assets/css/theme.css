@@ -2218,9 +2218,10 @@ pre {
 }
 
 
-.animate_left{
+.animate_left {
   font-family: 'Muller Narrow', sans-serif;
 }
+
 .owl-item .animate_left {
   position: relative;
   display: block;
@@ -2324,7 +2325,7 @@ pre {
 }
 
 
-.theme_btn{
+.theme_btn {
   font-family: 'Muller', sans-serif;
 
 }
@@ -2742,7 +2743,7 @@ pre {
   padding: 0px 15px;
 }
 
-.title{
+.title {
   font-family: 'Muller Narrow', sans-serif;
 }
 
@@ -3368,6 +3369,8 @@ pre {
 
 .icon_box_only.type_three .icon_inner .content a.rd_more {
   color: var(--color-white);
+  margin-top: auto;
+  display: block;
 }
 
 .icon_box_only.type_three:before {
@@ -3798,6 +3801,7 @@ body .service_post.style_one .owl-carousel .owl-dots {
 .service_box {
   position: relative;
   margin-bottom: 30px;
+
 }
 
 .service_box.type_one {
@@ -3891,7 +3895,7 @@ body .service_post.style_one .owl-carousel .owl-dots {
   font-size: 200px;
   line-height: 200px;
   color: var(--color-set-one-lig-1);
-  z-index: 1;
+  z-index: 0;
 }
 
 .service_box.type_one .content_box .content_inner p {
@@ -3971,6 +3975,9 @@ body .service_post.style_one .owl-carousel .owl-dots {
   border-radius: 20px;
   background: var(--color-white);
   box-shadow: var(--box-shadow-three);
+  position: relative;
+  z-index: -1;
+  height: 550px;
 }
 
 .service_box.type_two .img_bx {
@@ -4010,7 +4017,7 @@ body .service_post.style_one .owl-carousel .owl-dots {
   font-size: 120px;
   line-height: 120px;
   color: var(--color-set-one-bg-1);
-  z-index: 0;
+  z-index: -1;
 }
 
 .service_box.type_two .content_box .icon {
@@ -10000,12 +10007,16 @@ a {
   -o-transition: 0.5s ease-in-out;
 }
 
+.logo_default {
+  width: 180px;
+}
+
 img {
-  max-width: 70%;
+
   display: block;
 }
 
-.price_img{
+.price_img {
   max-width: 100%;
 }
 
@@ -10243,7 +10254,7 @@ table tfoot tr th {
 }
 
 .title_24 {
-  font-size: unset;
+  font-size: 25px;
   line-height: unset;
   margin: 0px;
 }
@@ -11032,9 +11043,10 @@ body .slick-dots li:last-child {
   }
 
 
-.text-link{
-  font-family: 'Muller Narrow', sans-serif;
-}
+  .text-link {
+    font-family: 'Muller Narrow', sans-serif;
+  }
+
   .navbar_nav>li>a .text-link .mbadge {
     position: absolute;
     top: -27px;
@@ -14800,9 +14812,10 @@ body .wp-block-rss li a {
   height: 370px;
 }
 
-.content_box .cat_gry h2{
+.content_box .cat_gry h2 {
   font-size: 30px;
 }
+
 .blog_style.one .content_box {
   position: relative;
   width: 58%;
@@ -17392,3 +17405,110 @@ input[type=range i]:focus::-webkit-slider-thumb {
 }
 
 /*# sourceMappingURL=theme.css.map */
+
+
+.image-layer {
+  background-size: cover;
+  height: 100%;
+}
+
+.owl-item {
+  height: 100%;
+}
+
+.owl-stage-outer {
+  height: 820px;
+}
+
+.owl-stage {
+  height: 100%;
+}
+
+.slide-item-content {
+  height: 100%;
+}
+
+.service_desc {
+  word-wrap: break-word;
+}
+
+
+.direction_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.direction_block_h100 {
+  height: 100%;
+}
+
+.profile_ava {
+  width: fit-content;
+  margin: auto;
+}
+
+.profile_ava img {
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width:800px) {
+
+  .slider.style_one .slider_content h1,
+  .slider.style_two .slider_content h1,
+  .slider.style_three .slider_content h1,
+  .single_banner.style_one h2 {
+    font-size: 26px;
+    line-height: 40px;
+    width: 50%;
+  }
+}
+
+@media (max-width:767px) {
+  .large-container .image_box {
+    display: none;
+  }
+
+  .container-fluid .image {
+    display: none;
+  }
+}
+
+@media (max-width:600px) {
+
+  .slider.style_one .slider_content h1,
+  .slider.style_two .slider_content h1,
+  .slider.style_three .slider_content h1,
+  .single_banner.style_one h2 {
+    width: 70%;
+  }
+  .image_box_only.type_three .right .image.three, .image_box_only.type_two .right .image {
+    display: none;
+    height: 0;
+  }
+  .image_box_only.type_three .image {
+    height: 0;
+    display: none;
+  }
+  .image_box_only.type_three .left .image  {
+    display: none;
+    height: 0;
+  }
+}
+
+@media (max-width:400px) {
+
+  .slider.style_one .slider_content h1,
+  .slider.style_two .slider_content h1,
+  .slider.style_three .slider_content h1,
+  .single_banner.style_one h2 {
+    font-size: 19px;
+    line-height: 20px;
+    width: 80%;
+  }
+}
+

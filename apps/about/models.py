@@ -6,78 +6,54 @@ class About(models.Model):
         max_length=155,
         verbose_name='Заголовка'
     )
-    context = models.CharField(
-        max_length=155,
+    description = models.CharField(
+        max_length=255,
         verbose_name='Описание'
     )
     image = models.ImageField(
         upload_to='about/',
         verbose_name='Фото'
     )
-    end_main = models.CharField(
-        max_length=155,
-        verbose_name='Конец'
-    )
 
     def __str__(self):
         return self.title
     
     class Meta:
         verbose_name = ''
-        verbose_name_plural = 'О нас'
-        
+        verbose_name_plural = 'Настройки Всего О нас'
+
 class Companion(models.Model):
-    blog_title = models.CharField(
-        max_length=100,
-        verbose_name='Заголовка Блога'
+    description = models.TextField(
+        verbose_name='Текст'
     )
-    blog_context = models.CharField(
-        max_length=100,
-        verbose_name='Описание Блога'
-    )
-    title = models.CharField(
-        max_length=100,
-        verbose_name='ЗАголовка'
-    )
-    text1 = models.TextField(
-        verbose_name='Текс'
-    )
-    text2 = models.TextField(
+    descriptions = models.TextField(
         verbose_name='Текст - 2'
     )
     image = models.ImageField(
-        upload_to='companion/',
+        upload_to='companion',
         verbose_name='Фото'
     )
 
-
     def __str__(self):
-        return self.title
+        return self.description
     
     class Meta:
         verbose_name = ''
-        verbose_name_plural = 'Наша компания'
+        verbose_name_plural = 'О компаний'
 
-# class Insurance(models.Model):
-
-class Develop(models.Model):
+class Business(models.Model):
     title = models.CharField(
         max_length=155,
         verbose_name='Заголовка'
     )
-    context = models.CharField(
-        max_length=255,
+    descriptions = models.TextField(
         verbose_name='Описание'
     )
-    text = models.TextField(
-        verbose_name='Текст'
-    )
     image = models.ImageField(
-        upload_to='develop',
+        upload_to='business',
         verbose_name='Фото'
     )
-    video = models.CharField(
-        max_length=155,
+    video = models.URLField(
         verbose_name='Видео'
     )
 
@@ -85,67 +61,24 @@ class Develop(models.Model):
         return self.title
     
     class Meta:
-        verbose_name =''
-        verbose_name_plural ='Почему Выбрали нас'
-
-ICON = (
-    ('Довольных клиентов', 'Довольных клиентов'),
-    ('Опытных сотрудников', 'Опытных сотрудников'),
-    ('Уровень удовлетворенности', 'Уровень удовлетворенности'),
-    ('Многолетний опыт', 'Многолетний опыт'),
-    ('Награды', 'Награды')
-)
-
-class Achievement(models.Model):
-    title = models.CharField(
-        max_length=155,
-        verbose_name='Заголовака'
-    )
-    context = models.CharField(
-        max_length=155,
-        verbose_name='Описание'
-    )
-    icon = models.CharField(
-        choices=ICON,
-        max_length=155,
-        verbose_name='Выберите иконку'
-    )
-    title_icon = models.CharField(
-        max_length=155,
-        verbose_name='Процент'
-    )
-    context_icon = models.CharField(
-        max_length=155,
-        verbose_name='Описание'
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
         verbose_name = ''
-        verbose_name_plural = 'Наши Достижение'
+        verbose_name_plural = 'Бизнес'
 
-class Comand(models.Model):
+class Team(models.Model):
     title = models.CharField(
         max_length=155,
-        verbose_name='Заголовка'
+        verbose_name='ФИО'
     )
-    context = models.CharField(
-        max_length=155,
-        verbose_name='Описание'
+    descriptions = models.CharField(
+        max_length=255,
+        verbose_name='Должность'
     )
     image = models.ImageField(
-        max_length=155,
+        upload_to='team',
         verbose_name='Фото'
     )
-    title_image = models.CharField(
-        max_length=155,
-        verbose_name='Заголовка Фото'
-    )
-    context_image = models.CharField(
-        max_length=155,
-        verbose_name='Описание Фото'
+    review = models.TextField(
+        verbose_name='Отзывы'
     )
 
     def __str__(self):
@@ -153,58 +86,4 @@ class Comand(models.Model):
     
     class Meta:
         verbose_name = ''
-        verbose_name = 'Наша Команда'
-
-class Klient(models.Model):
-    title = models.CharField(
-        max_length=155,
-        verbose_name='Заголовка'
-    )
-    context = models.CharField(
-        max_length=155,
-        verbose_name='Описание'
-    )
-    image = models.ImageField(
-        upload_to='klient/',
-        verbose_name='Фото'
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'Наши клиенты'
-
-class Requests(models.Model):
-    title = models.CharField(
-        max_length=155,
-        verbose_name='Заголовка'
-    )
-    blog_title = models.CharField(
-        max_length=155,
-        verbose_name='Заголовка Блога'
-    )
-    image_blog = models.ImageField(
-        upload_to='requests/',
-        verbose_name='Фото'
-    )
-    context_blog = models.CharField(
-        max_length=155,
-        verbose_name='Описание Блога'
-    )
-    blog_text = models.TextField(
-        verbose_name='Текст'
-    )
-    end_blog = models.CharField(
-        max_length=100,
-        verbose_name='ОТЗЫВ'
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'Часто Задаваемые Вопросы'
-        
+        verbose_name_plural = 'Наша команда'

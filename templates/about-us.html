@@ -1,4 +1,4 @@
-{% extends "include/homepage.html" %}
+{% extends 'include/homepage.html' %}
 {% load static %}
 {% block content %}
 
@@ -19,7 +19,8 @@
             </div>
             <!----=============Preloader end=============---->
             <!----=============Header=============---->
-            {% include "include/header.html" %}
+            {% include 'include/header.html' %}
+
             <!----==============sticky header end==============--->
             <!----==============content_all_warpper==============--->
             <div id="wrapper_full" class="content_all_warpper">
@@ -38,8 +39,8 @@
                                 </div>
                                 <div class="col-lg-12 vankine">
                                     <ul class="breadcrumb m-auto">
-                                        <li><a href="about-us">{{ about.context }}</a> </li>
-                                        <li class="active">{{ about.end_main }}</li>
+                                        <li><a href="about-us.html#">{{ about.description }}</a> </li>
+                                        <li class="active">О Нас</li>
                                     </ul>
                                 </div>
                             </div>
@@ -65,20 +66,20 @@
 
                                         <div class="fun_facts type_two">
                                             <h4>
-                                                <span class="count">{{ comp.blog_title }}</span>
+                                                <span class="count">10</span>
                                                 <small>
                                                     + </small></h4>
-                                            <h6 class="title_no_a_26">{{ comp.blog_context }}</h6>
+                                            <h6 class="title_no_a_26">Года Опыта</h6>
                                         </div>
                                         <div class="m_image">
-                                            <img src="{{ comp.image.url }}" alt="img" class="img-fluid">
+                                            <img src="{{ companio.image.url  }}" alt="img" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 pd_left_30">
                                     <div class="section_title type_one">
                                         <div class="title_whole">
-                                            <h2 class="title">{{ comp.title }}</h2>
+                                            <h2 class="title"> О Компании</h2>
                                         </div>
                                     </div>
                                     <!---============spacing==========--->
@@ -90,10 +91,10 @@
                                                 aria-labelledby="aboutuss-tabtab">
                                                 <div class="tab_content_box">
                                                     <div class="content">
-                                                       <p>{{ comp.text1 }}</p>
+                                                       <p>{{ companio.description }}</p>
                                                         <br>
                                                         <br>
-                                                        <p>{{ comp.text2 }}</p>
+                                                        <p>{{ companio.descriptions }}</p>
                                                     </div>
                                                     
                                                 </div>
@@ -125,11 +126,11 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="section_title type_one">
-                                        <h4 class="sm_title">{{ develop.title }}</h4>
+                                        <h4 class="sm_title"> Почему выбрали нас</h4>
                                         <div class="title_whole">
-                                            <h2 class="title">{{ develop.context }}</h2>
+                                            <h2 class="title">{{business.title  }}</h2>
                                         </div>
-                                        <p>{{ develop.text }}</p>
+                                        <p> {{ business.descriptions }}</p>
                                     </div>
                                     <!---============spacing==========--->
                                     <div class="pd_bottom_40"></div>
@@ -142,9 +143,9 @@
                                 <div class="col-lg-6">
                                     <div class="image_video_box_only  type_one mr_bottom_minus_90 z_1">
                                         <div class="image one height_530px">
-                                            <img src="{{ develop.image.url }}" alt="img" class="img-fluid height_530px"> 
+                                            <img src="{{ business.image.url }}" alt="img" class="img-fluid height_530px"> 
                                             <div class="video_box video-inner text-center">
-                                                <a href="{{ develop.video }}" class="lightbox-image">
+                                                <a href="{{ business.video }}" class="lightbox-image">
                                                     <i class="fi-rr-play"></i>
                                                 </a>
                                             </div>
@@ -165,9 +166,9 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="section_title text-center color_white type_one">
-                                        <h4 class="sm_title">{{ achievemant_id.title }}</h4>
+                                        <h4 class="sm_title">Анализ статистики компании</h4>
                                         <div class="title_whole">
-                                            <h2 class="title">{{ achievemant_id.context }}</h2>
+                                            <h2 class="title">Большое достижение в развитии</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -178,38 +179,87 @@
 
                             <div class="row">
                                 <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12"></div>
-                                {% for achievemant in achievemant_all %}
                                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
                                     <div class="fun_facts type_one color_white">
                                         <div class="icon trans">
                                             <div class="icon_in trans">
-                                                {% if achievemant.icon == 'Довольных клиентов' %}
                                                 <i class=" flaticon-satisfaction"></i></div>
-                                                {% endif %}
-                                                {% if achievemant.icon == 'Опытных сотрудников' %}
-                                                <i class=" flaticon-business-people"></i></div>
-                                                {% endif %}
-                                                {% if achievemant.icon == 'Уровень удовлетворенности' %}
-                                                <i class=" flaticon-reviews"></i></div>
-                                                {% endif %}
-                                                {% if achievemant.icon == 'Многолетний опыт' %}
-                                                <i class=" flaticon-presenter"></i></div>
-                                                {% endif %}
-                                                {% if achievemant.icon == 'Награды' %}
-                                                <i class=" flaticon-trophy"></i></div>
-                                                {% endif %}
                                         </div>
                                         <h4>
-                                            <span class="count">{{ achievemant.title_icon }}</span>
+                                            <span class="count">8563</span>
                                             <small>
                                                 + </small></h4>
-                                        <h6 class="title_no_a_18">{{ achievemant.context_icon }}</h6>
+                                        <h6 class="title_no_a_18">Довольных клиентов</h6>
                                     </div>
                                     <!---============spacing==========--->
                                     <div class="pd_bottom_20"></div>
                                     <!---============spacing==========--->
                                 </div>
-                                {% endfor %}
+                                <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="fun_facts type_one color_white">
+                                        <div class="icon trans">
+                                            <div class="icon_in trans">
+                                                <i class=" flaticon-business-people"></i></div>
+                                        </div>
+                                        <h4>
+                                            <span class="count">2630</span>
+                                            <small>
+                                                + </small></h4>
+                                        <h6 class="title_no_a_18">Опытных сотрудников</h6>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_20"></div>
+                                    <!---============spacing==========--->
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="fun_facts type_one color_white">
+                                        <div class="icon trans">
+                                            <div class="icon_in trans">
+                                                <i class=" flaticon-reviews"></i></div>
+                                        </div>
+                                        <h4>
+                                            <span class="count">100</span>
+                                            <small>
+                                                % </small></h4>
+                                        <h6 class="title_no_a_18">Уровень удовлетворенности</h6>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_20"></div>
+                                    <!---============spacing==========--->
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="fun_facts type_one color_white">
+                                        <div class="icon trans">
+                                            <div class="icon_in trans">
+                                                <i class=" flaticon-presenter"></i></div>
+                                        </div>
+                                        <h4>
+                                            <span class="count">25</span>
+                                            <small>
+                                                + </small></h4>
+                                        <h6 class="title_no_a_18">Многолетний опыт</h6>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_20"></div>
+                                    <!---============spacing==========--->
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="fun_facts type_one color_white">
+                                        <div class="icon trans">
+                                            <div class="icon_in trans">
+                                                <i class=" flaticon-trophy"></i></div>
+                                        </div>
+                                        <h4>
+                                            <span class="count">963</span>
+                                            <small>
+                                                + </small></h4>
+                                        <h6 class="title_no_a_18">Награды</h6>
+                                    </div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_20"></div>
+                                    <!---============spacing==========--->
+                                </div>
+                                <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12"></div>
                             </div>
 
 
@@ -230,10 +280,10 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="section_title text-center type_one">
-                                        <h4 class="sm_title">{{ comand_id.title }}</h4>
+                                        <h4 class="sm_title"> Член нашей команды</h4>
                                         <div class="title_whole">
                                             <h2 class="title"> 
-                                                {{ comand_id.context }}</h2>
+                                                Познакомьтесь с нашей удивительной командой</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -242,35 +292,35 @@
                             <div class="pd_bottom_40"></div>
                             <!---============spacing==========--->
                             <div class="row">
-                                {% for comand in comand_all %}
+                                {% for team in team_all %}
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                                     <div class="team_box type_two">
                                         <div class="team_box_inner">
                                             <div class="contnet">
                                                 <h6 class="title_22">
-                                                    <a href="about-us">
-                                                    {{ comand.title_image }}</a></h6>
-                                                <p>{{ comand.context_image }}</p>
+                                                    <a href="about#">
+                                                        {{ team.title }} </a></h6>
+                                                <p> {{ team.descriptions }}</p>
                                             </div>
                                             <div class="image_box">
-                                                <img src="{{ comand.image.url }}" alt="img" class="img-fluid">
+                                                <img src="{{ team.image.url }}" alt="img" class="img-fluid">
 
                                                 <div class="social-icons trans">
                                                     <ul>
                                                         <li>
-                                                            <a href="about-us" class="m_icon">
+                                                            <a href="about-us.html#" class="m_icon">
                                                                 <i class="fab fa-facebook"></i>
                                                             </a></li>
                                                         <li>
-                                                            <a href="about-us" class="m_icon">
+                                                            <a href="about-us.html#" class="m_icon">
                                                                 <i class="fab fa-twitter"></i>
                                                             </a></li>
                                                         <li>
-                                                            <a href="about-us" class="m_icon">
+                                                            <a href="about-us.html#" class="m_icon">
                                                                 <i class="fab fa-skype"></i>
                                                             </a></li>
                                                         <li>
-                                                            <a href="about-us" class="m_icon">
+                                                            <a href="about-us.html#" class="m_icon">
                                                                 <i class="fab fa-instagram"></i>
                                                             </a></li>
                                                     </ul>
@@ -296,18 +346,18 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-4 col-md-12 pd_right_60">
                                     <div class="section_title type_one small">
-                                        <h4 class="sm_title">{{ klient_id.title }}</h4>
+                                        <h4 class="sm_title">Популярные клиенты</h4>
                                         <div class="title_whole">
-                                            <h2 class="title">{{ klient_id.context }}</h2>
+                                            <h2 class="title">У нас более 1520 премиальных клиентов по всему миру.</h2>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-8 col-md-12">
                                     <div class="row">
-                                        {% for klient in klient_all %}
+                                        {% for partner in partners_all %}
                                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                                             <div class="iamge mr_bottom_20 mr_top_20">
-                                                <img src="{{ klient.image.url }}" class="img-fluid m-auto" alt="client" style="width: 70%;">
+                                                <img src="{{ partner.image.url }}" class="img-fluid m-auto" alt="client" style="width: 70%;">
                                             </div>
                                         </div>
                                         {% endfor %}
@@ -330,7 +380,7 @@
                                 <div class="col-lg-12">
                                     <div class="section_title text-center type_one">
                                         <div class="title_whole">
-                                            <h2 class="title">{{ request_id.title }}</h2>
+                                            <h2 class="title"> Популярные Запросы</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -341,23 +391,23 @@
                             <div class="testimonial_carousel  position-relative position_one nav_false dot_true">
                                 <div class="theme_carousel owl-theme owl-carousel"
                                     data-options='{"loop": true , "margin": 20, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": false, "autoplayTimeout": 6000,  "smartSpeed": 300, "responsive":{ "0" :{ "items": "1" }, "320" :{ "items" : "1" }, "500" :{ "items" : "1" }, "768" :{ "items" : "2" } , "992":{ "items" : "3" }, "1200":{ "items" : "3" }}}'>
-                                    {% for request in request_all %}
+                                    {% for review in team_all2 %}
                                     <div class="testimonial_box type_two ">
                                         <div class="auth d-flex align-items-center clearfix">
                                             <div class="image_box">
-                                                <img src="{{ request.image_blog.url }}" alt="img"
+                                                <img src="{{ review.image.url }}" alt="img"
                                                     class="img-fluid" />
                                             </div>
                                             <div class="cont">
-                                                <h4 class="title_no_a_24">{{ request.blog_title }}</h4>
-                                                <p>{{ request.context_blog }}</p>
+                                                <h4 class="title_no_a_24">{{ review.title }}</h4>
+                                                <p>{{ review.descriptions }}</p>
                                             </div>
                                         </div>
                                         <div class="title_no_a_22 t_comment">
-                                            <sup>“</sup>{{ request.blog_text }}
+                                            <sup>“</sup>{{ review.review }}
                                             <sub>“</sub></div>
                                         <div class="box">
-                                            <h6>{{ request.end_blog }}</h6>
+                                            <h6>Отзыв</h6>
                                             <p>
                                                 <i class="fa fa-star fill"></i><i class="fa fa-star fill"></i><i
                                                     class="fa fa-star fill"></i><i class="fa fa-star empty"></i><i
@@ -365,6 +415,127 @@
                                         </div>
                                     </div>
                                     {% endfor %}
+                                    <!-- <div class="testimonial_box type_two ">
+                                        <div class="auth d-flex align-items-center clearfix">
+                                            <div class="image_box">
+                                                <img src="assets/images/testimonial/test-2-min.png" alt="img"
+                                                    class="img-fluid" />
+                                            </div>
+                                            <div class="cont">
+                                                <h4 class="title_no_a_24">Артур Пирожков</h4>
+                                                <p>​Менеджмент</p>
+                                            </div>
+                                        </div>
+                                        <div class="title_no_a_22 t_comment">
+                                            <sup>“</sup>Sed perspiciatis unonis
+                                            este natus error sit volutate accusantium dolor laudant totam rem aperiam
+                                            eaupsa abillo inven veritatis
+                                            <sub>“</sub></div>
+                                        <div class="box">
+                                            <h6>Никола Тесла</h6>
+                                            <p>
+                                                <i class="fa fa-star fill"></i><i class="fa fa-star fill"></i><i
+                                                    class="fa fa-star fill"></i><i class="fa fa-star empty"></i><i
+                                                    class="fa fa-star empty"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial_box type_two ">
+                                        <div class="auth d-flex align-items-center clearfix">
+                                            <div class="image_box">
+                                                <img src="assets/images/testimonial/test-1-min.png" alt="img"
+                                                    class="img-fluid" />
+                                            </div>
+                                            <div class="cont">
+                                                <h4 class="title_no_a_24">Иван Золо</h4>
+                                                <p>Дизайн и архитектура</p>
+                                            </div>
+                                        </div>
+                                        <div class="title_no_a_22 t_comment">
+                                            <sup>“</sup>Sed perspiciatis unonis
+                                            este natus error sit volutate accusantium dolor laudant totam rem aperiam
+                                            eaupsa abillo inven veritatis
+                                            <sub>“</sub></div>
+                                        <div class="box">
+                                            <h6>Аристотель</h6>
+                                            <p>
+                                                <i class="fa fa-star fill"></i><i class="fa fa-star fill"></i><i
+                                                    class="fa fa-star fill"></i><i class="fa fa-star empty"></i><i
+                                                    class="fa fa-star empty"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial_box type_two ">
+                                        <div class="auth d-flex align-items-center clearfix">
+                                            <div class="image_box">
+                                                <img src="assets/images/testimonial/test-3-min.png" alt="img"
+                                                    class="img-fluid" />
+                                            </div>
+                                            <div class="cont">
+                                                <h4 class="title_no_a_24">Гомер Сипсон</h4>
+                                                <p>Разработка Бизнес-планов</p>
+                                            </div>
+                                        </div>
+                                        <div class="title_no_a_22 t_comment">
+                                            <sup>“</sup>Sed perspiciatis unonis
+                                            este natus error sit volutate accusantium dolor laudant totam rem aperiam
+                                            eaupsa abillo inven veritatis
+                                            <sub>“</sub></div>
+                                        <div class="box">
+                                            <h6>Леонардо Давинчи</h6>
+                                            <p>
+                                                <i class="fa fa-star fill"></i><i class="fa fa-star fill"></i><i
+                                                    class="fa fa-star fill"></i><i class="fa fa-star empty"></i><i
+                                                    class="fa fa-star empty"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial_box type_two ">
+                                        <div class="auth d-flex align-items-center clearfix">
+                                            <div class="image_box">
+                                                <img src="assets/images/testimonial/test-2-min.png" alt="img"
+                                                    class="img-fluid" />
+                                            </div>
+                                            <div class="cont">
+                                                <h4 class="title_no_a_24">Артур Пирожков</h4>
+                                                <p>​Менеджмент</p>
+                                            </div>
+                                        </div>
+                                        <div class="title_no_a_22 t_comment">
+                                            <sup>“</sup>Sed perspiciatis unonis
+                                            este natus error sit volutate accusantium dolor laudant totam rem aperiam
+                                            eaupsa abillo inven veritatis
+                                            <sub>“</sub></div>
+                                        <div class="box">
+                                            <h6>Никола Тесла</h6>
+                                            <p>
+                                                <i class="fa fa-star fill"></i><i class="fa fa-star fill"></i><i
+                                                    class="fa fa-star fill"></i><i class="fa fa-star empty"></i><i
+                                                    class="fa fa-star empty"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial_box type_two ">
+                                        <div class="auth d-flex align-items-center clearfix">
+                                            <div class="image_box">
+                                                <img src="assets/images/testimonial/test-1-min.png" alt="img"
+                                                    class="img-fluid" />
+                                            </div>
+                                            <div class="cont">
+                                                <h4 class="title_no_a_24">Иван Золо</h4>
+                                                <p>Дизайн и архитектура</p>
+                                            </div>
+                                        </div>
+                                        <div class="title_no_a_22 t_comment">
+                                            <sup>“</sup>Sed perspiciatis unonis
+                                            este natus error sit volutate accusantium dolor laudant totam rem aperiam
+                                            eaupsa abillo inven veritatis
+                                            <sub>“</sub></div>
+                                        <div class="box">
+                                            <h6>Аристотель</h6>
+                                            <p>
+                                                <i class="fa fa-star fill"></i><i class="fa fa-star fill"></i><i
+                                                    class="fa fa-star fill"></i><i class="fa fa-star empty"></i><i
+                                                    class="fa fa-star empty"></i></p>
+                                        </div>
+                                    </div> -->
+                                    
                                 </div>
                             </div>
                         </div>
@@ -376,7 +547,8 @@
                 </div>
                 <!--content end-->
                 <!--footer start-->
-                {% include "include/footer.html"%}
+                {% include 'include/footer.html' %}
+
                   <!--footer  end-->
                   <!----==============content_all_warpper==============--->
                 </div>
@@ -407,10 +579,10 @@
                                       class="fi-rs-envelope"></i>mailbox.msbusiness@gmail.com</a>
                           </div>
                           <div class="single-mobile-header-info">
-                              <a href="contact" class="theme_btn tp_one">Контакты</a>
+                              <a href="contact.html" class="theme_btn tp_one">Контакты</a>
                           </div>
                           <div class="single-mobile-header-info">
-                              <a href="index" class="theme_btn">Service</a>
+                              <a href="index.html#" class="theme_btn">Service</a>
                           </div>
                       </div>
           
