@@ -32,14 +32,14 @@
                               
                                 </li>
                                 <li class="menu-item  menu-item-has-children dropdown  mennucolumn_ nav-item">
-                                    <a href="service-details.html" class="nav_link">
+                                    <a href="{% url 'service-details' %}" class="nav_link">
                                         <span class="text-link">
                                             Преимущества
                                         </span>
                                     </a>
                                     <ul class="sub_menu">
                                         <li class="menu-item nav-item">
-                                            <a href="blog-details.html" class="nav_link">
+                                            <a href="{% url 'blog-details' %}" class="nav_link">
                                                 <span class="text-link"> 
                                                     Сопровождение бизнеса
                                                 </span>
@@ -50,7 +50,7 @@
                                                 <span class="text-link">
                                                     Широкая география
                                                 </span>
-                                            </a>
+                                            </a>    
                                         </li>
                                         <li class="menu-item   nav-item">
                                             <a href="service-style-6.html" class="nav_link">
@@ -126,14 +126,13 @@
                                             </a>
                                         </li>
                                         <li class="menu-item nav-item">
-                                            <a href="#service-details.html" class="nav_link">
+                                            <a href="{% url 'service-details' %}" class="nav_link">
                                                 <span class="text-link">
                                                     ​Digital проекты 
                                                 </span>
                                             </a>
                                         </li>
                                     </ul>
-
                                 </li>
                                 <li class="menu-item ">
                                     <a href="{% url 'blog' %}" class="nav_link">
@@ -218,14 +217,14 @@
                                  
                                 </li>
                                 <li class="menu-item  menu-item-has-children dropdown  mennucolumn_ nav-item">
-                                    <a href="service-details.html" class="nav_link">
+                                    <a href="{% url 'service-details' %}" class="nav_link">
                                         <span class="text-link">
                                             Преимущества
                                         </span>
                                     </a>
                                     <ul class="sub_menu">
                                         <li class="menu-item nav-item">
-                                            <a href="blog-details.html" class="nav_link">
+                                            <a href="{% url 'blog-details' %}" class="nav_link">
                                                 <span class="text-link"> 
                                                     Сопровождение бизнеса
                                                 </span>
@@ -312,7 +311,7 @@
                                             </a>
                                         </li>
                                         <li class="menu-item nav-item">
-                                            <a href="#service-details.html" class="nav_link">
+                                            <a href="{% url 'service-details' %}" class="nav_link">
                                                 <span class="text-link">
                                                     ​Digital проекты 
                                                 </span>
@@ -336,13 +335,11 @@
                                             О нас
                                         </span>
                                     </a>
-                                   
                                 </li>
-
                             </ul>
-                            <div class="search search-toggler">
+                            <!-- <div class="search search-toggler">
                                 <i class="fi-rs-search"></i>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-7 col-sm-7 col-xs-7 nav_tog_column">
@@ -364,13 +361,12 @@
                                     </svg>
                                 </a>
                             </div>
-                            <div class="contact-toggler">
+                            <!-- <div class="contact-toggler">
                                 <a href="{% url 'register' %}" class="profile_btn">
                                     <img src="{% static 'assets/images/MS/Microsoft_Account_Logo.svg' %}" alt="" style="width: 50px;">
                                 </a>
                                 </svg>
-                            </div>
-
+                            </div> -->
                         </div>
                     </div>
                 </div>

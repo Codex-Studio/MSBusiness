@@ -61,8 +61,6 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" style="width: 100%;">
-
-                                < class="row loop-grid">
                                     <!---#row---->
                                     {% for project in project_all %}
                                     <div class="col-xl-12">
@@ -89,7 +87,7 @@
                                                 </div>
 
                                                 <div class="bottom d-flex  align-items-center">
-                                                    <a href="blog-details.html" class="rd_more">Читать Далее <i
+                                                    <a href="{% url 'blog-details' %}" class="rd_more">Читать Далее <i
                                                             class="fi-rr-arrow-small-right"></i>
                                                     </a>
 

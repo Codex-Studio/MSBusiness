@@ -28,7 +28,7 @@
       <!----==============content_all_warpper==============--->
       <!----==============page header==============--->
       <section class="page_header_default pg_bg_cover alignment_center">
-        <div class="bakground_cover" style="background-image:url(assets/images/MS/service_bg_img.jpeg)"></div>
+        <div class="bakground_cover" style="background-image:url({% static 'assets/images/MS/service_bg_img.jpeg' %})"></div>
         <div class="page_header_content">
           <div class="container">
             <div class="row">
@@ -63,7 +63,7 @@
             <div class="row align-items-center">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="image_box">
-                  <img src="assets/images/service/ser-v1-1-min.png" class="img-fluid" alt="img" />
+                  <img src="{% static 'assets/images/service/ser-v1-1-min.png' %}" class="img-fluid" alt="img" />
                 </div>
                 <!---============spacing==========--->
                 <div class="pd_bottom_20"></div>
@@ -76,14 +76,9 @@
                 <div class="section_title type_one">
                   <h4 class="sm_title"> Команда</h4>
                   <div class="title_whole">
-                    <h2 class="title"> Профессиональная Команда</h2>
+                    <h2 class="title"> {{ details_id.title }}</h2>
                   </div>
-                  <p>Наша профессиональная команда - это ваш партнер в успехе бизнеса. Мы специализируемся на стратегиях
-                    продвижения, маркетинге и консалтинге для предприятий в разных отраслях. Наш коллектив объединяет
-                    экспертов с глубокими знаниями и богатым опытом, способных привнести новые идеи и творческие подходы
-                    в ваш проект.
-                    <a class="rd_more_team" href="team.html"> Читать Далее</a>
-
+                  <p>{{ details_id.text }}<a class="rd_more_team" href="team.html"> Читать Далее</a>
                   </p>
                   <!---============spacing==========--->
                   <div class="pd_bottom_30"></div>
@@ -93,30 +88,16 @@
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="position-relative">
                       <ul class="list_box weight_500 list">
+                        {% for kolonki in details_all %}
                         <li>
                           <div class="d-flex align-items-center">
                             <div class="icon trans">
                               <i class=" fi-rs-shield-check"></i>
                             </div>
-                            <a class="links" href="service-details.html#"> Коммуникация </a>
+                            <a class="links" href="service-details.html#"> {{ kolonki.team_title }} </a>
                           </div>
                         </li>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <div class="icon trans">
-                              <i class=" fi-rs-shield-check"></i>
-                            </div>
-                            <a class="links" href="service-details.html#"> Профессионализм </a>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <div class="icon trans">
-                              <i class=" fi-rs-shield-check"></i>
-                            </div>
-                            <a class="links" href="service-details.html#"> Творческий подход</a>
-                          </div>
-                        </li>
+                        {% endfor %}
                       </ul>
                       <!---============spacing==========--->
                       <div class="pd_bottom_20"></div>
@@ -126,30 +107,16 @@
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="position-relative">
                       <ul class="list_box weight_500 list">
+                        {% for kolonki2 in details_all %}
                         <li>
                           <div class="d-flex align-items-center">
                             <div class="icon trans">
                               <i class=" fi-rs-shield-check"></i>
                             </div>
-                            <a class="links" href="service-details.html#"> Гибкость</a>
+                            <a class="links" href="service-details.html#"> {{ kolonki2.team_title2 }}</a>
                           </div>
                         </li>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <div class="icon trans">
-                              <i class=" fi-rs-shield-check"></i>
-                            </div>
-                            <a class="links" href="service-details.html#"> Опыт в различных отраслях </a>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <div class="icon trans">
-                              <i class=" fi-rs-shield-check"></i>
-                            </div>
-                            <a class="links" href="service-details.html#"> Коллективный дух </a>
-                          </div>
-                        </li>
+                        {% endfor %}
                       </ul>
                       </a>
                       <!---============spacing==========--->
@@ -176,101 +143,40 @@
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pd_right_70">
                 <div class="section_title type_one">
                   <div class="title_whole">
-                    <h2 class="title"> Широкая География</h2>
+                    <h2 class="title"> {{ details_id.geografi_title }}</h2>
                   </div>
                 </div>
                 <!---============spacing==========--->
                 <div class="pd_bottom_40"></div>
-                <!---============spacing==========--->
-                <div class="icon_box_only type_five color_two d-flex  trans">
-                  <div class="icon">
-                    <i class=" fi-rr-comment-check"></i>
-                  </div>
-                  <div class="content">
-                    <div class="title_22">
-                      <a href="service-style-4.html"> Локальная Экспертиза, Мировой Опыт </a>
-                    </div>
-                  </div>
-                </div>
-                <!---============spacing==========--->
-                <div class="pd_top_15"></div>
-                <!---============spacing==========--->
-                <div class="divider"></div>
-                <!---============spacing==========--->
-                <div class="pd_bottom_25"></div>
-                <!---============spacing==========--->
-                <div class="icon_box_only type_five color_two d-flex  trans">
-                  <div class="icon">
-                    <i class=" fi-rr-comment-check"></i>
-                  </div>
-                  <div class="content">
-                    <div class="title_22">
-                      <a href="service-style-4.html"> Мировые Достижения </a>
-                    </div>
-                  </div>
-                </div>
-                <!---============spacing==========--->
-                <div class="pd_top_15"></div>
-                <!---============spacing==========--->
-                <div class="divider"></div>
-                <!---============spacing==========--->
-                <div class="pd_bottom_25"></div>
-                <!---============spacing==========--->
-                <div class="icon_box_only type_five color_two d-flex  trans">
-                  <div class="icon">
-                    <i class=" fi-rr-comment-check"></i>
-                  </div>
-                  <div class="content">
-                    <div class="title_22">
-                      <a href="service-style-4.html"> Сотрудничество Через Расстояние</a>
-                    </div>
-                  </div>
-                </div>
-                <!---============spacing==========--->
-                <div class="pd_top_15"></div>
-                <!---============spacing==========--->
-                <div class="divider"></div>
-                <!---============spacing==========--->
-                <div class="pd_bottom_25"></div>
-                <!---============spacing==========--->
-                <div class="icon_box_only type_five color_two d-flex  trans">
-                  <div class="icon">
-                    <i class=" fi-rr-comment-check"></i>
-                  </div>
-                  <div class="content">
-                    <div class="title_22">
-                      <a href="service-style-4.html"> Преимущество Многокультурного Окружения</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="pd_top_15"></div>
-                <!---============spacing==========--->
-                <div class="divider"></div>
-                <!---============spacing==========--->
-                <div class="pd_bottom_25"></div>
-                <!---============spacing==========--->
-                <div class="icon_box_only type_five color_two d-flex  trans">
-                  <div class="icon">
-                    <i class=" fi-rr-comment-check"></i>
-                  </div>
-                  <div class="content">
-                    <div class="title_22">
-                      <a href="service-style-4.html"> Местное присутствие</a>
-                    </div>
-                  </div>
-                </div>
-
                 <!---============spacing==========--->
                 <div class="pd_top_15"></div>
                 <!---============spacing==========--->
                 <div class="divider"></div>
                 <!---============spacing==========--->
                 <div class="pd_bottom_45"></div>
+                {% for service in service_all %}
+                <div class="icon_box_only type_five color_two d-flex  trans">
+                  <div class="icon">
+                    <i class=" fi-rr-comment-check"></i>
+                  </div>
+                  <div class="content">
+                    <div class="title_22">
+                      <a href="service-style-4.html"> {{ service.title }} </a>
+                    </div>
+                  </div>
+                </div>
+                <!---============spacing==========--->
+                <div class="pd_top_15"></div>
+                <!---============spacing==========--->
+                <div class="divider"></div>
+                <!---============spacing==========--->
+                <div class="pd_bottom_45"></div>
+                {% endfor %}
                 <!---============spacing==========--->
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="image_box mr_bottom_minus_200  position-relative z_2">
-                  <img src="assets/images/service/ser-v1-2-min.png" class="img-fluid" alt="img" />
+                  <img src="{{ details_id.geografy_image.url }}" class="img-fluid" alt="img" />
                 </div>
                 <!---============spacing==========--->
                 <div class="pd_bottom_20"></div>
@@ -303,6 +209,7 @@
             <div class="pd_bottom_40"></div>
             <!---============spacing==========--->
             <div class="row">
+              {% for service_details in service_all|slice:":4" %}
               <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="icon_box_only type_one color_two">
                   <div class="icon_box_in trans">
@@ -324,115 +231,21 @@
                     </div>
                     <div class="after"></div>
                     <div class="icon">
+                      {% if service_details.icon == 'Стратегическое Консультирование' %}
                       <i class=" flaticon-health-insurance"></i>
-                    </div>
-                    <div class="title_22">
-                      <a href="service-style-6.html"> Стратегическое Консультирование </a>
-                    </div>
-                    <a class="rd_more" href="service-style-6.html"> Читать Далее <i
-                        class="icontb fi-rs-arrow-small-right"></i>
-                    </a>
-                  </div>
-                </div>
-                <!---============spacing==========--->
-                <div class="pd_bottom_20"></div>
-                <!---============spacing==========--->
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="icon_box_only type_one color_two">
-                  <div class="icon_box_in trans">
-                    <div class="shape_image">
-                      <svg width="116" height="121" viewBox="0 0 116 121" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.8056 39.6223L0.500244 0H17.5002L36.1734 36.0124L19.8056 39.6223Z"
-                          fill="var(--color-set-one-1)"></path>
-                        <path class="two"
-                          d="M36.8216 44.7789L19.8086 39.6339L41.3565 29.0508L58.4829 34.1875L36.8216 44.7789Z"
-                          fill="var(--color-set-one-2)"></path>
-                        <path class="two"
-                          d="M75.3704 66.1668L58.0938 61.0318L80.9934 52.772L98.1198 57.9087L75.3704 66.1668Z"
-                          fill="var(--color-set-one-2)"></path>
-                        <path d="M41.3564 29.0508L58.0936 61.0319L71.4346 56.223L60.3526 34.7522L41.3564 29.0508Z"
-                          fill="var(--color-set-one-1)"></path>
-                        <path d="M80.9629 52.792L116 121V91.5L99.9591 58.4917" fill="var(--color-set-one-1)"></path>
-                      </svg>
-                    </div>
-                    <div class="after"></div>
-                    <div class="icon">
+                      {% endif %}
+                      {% if service_details.icon == 'Финансовое Планирование' %}
                       <i class=" flaticon-growth"></i>
-                    </div>
-                    <div class="title_22">
-                      <a href="service-style-6.html"> Финансовое Планирование </a>
-                    </div>
-                    <a class="rd_more" href="service-style-6.html"> Читать Далее<i
-                        class="icontb fi-rs-arrow-small-right"></i>
-                    </a>
-                  </div>
-                </div>
-                <!---============spacing==========--->
-                <div class="pd_bottom_20"></div>
-                <!---============spacing==========--->
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="icon_box_only type_one color_two">
-                  <div class="icon_box_in trans">
-                    <div class="shape_image">
-                      <svg width="116" height="121" viewBox="0 0 116 121" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.8056 39.6223L0.500244 0H17.5002L36.1734 36.0124L19.8056 39.6223Z"
-                          fill="var(--color-set-one-1)"></path>
-                        <path class="two"
-                          d="M36.8216 44.7789L19.8086 39.6339L41.3565 29.0508L58.4829 34.1875L36.8216 44.7789Z"
-                          fill="var(--color-set-one-2)"></path>
-                        <path class="two"
-                          d="M75.3704 66.1668L58.0938 61.0318L80.9934 52.772L98.1198 57.9087L75.3704 66.1668Z"
-                          fill="var(--color-set-one-2)"></path>
-                        <path d="M41.3564 29.0508L58.0936 61.0319L71.4346 56.223L60.3526 34.7522L41.3564 29.0508Z"
-                          fill="var(--color-set-one-1)"></path>
-                        <path d="M80.9629 52.792L116 121V91.5L99.9591 58.4917" fill="var(--color-set-one-1)"></path>
-                      </svg>
-                    </div>
-                    <div class="after"></div>
-                    <div class="icon">
+                      {% endif %}
+                      {% if service_details.icon == 'Достижение Результатов' %}
                       <i class=" flaticon-online-analytical"></i>
-                    </div>
-                    <div class="title_22">
-                      <a href="service-style-6.html"> Достижение Результатов </a>
-                    </div>
-                    <a class="rd_more" href="service-style-6.html"> Читать Далее<i
-                        class="icontb fi-rs-arrow-small-right"></i>
-                    </a>
-                  </div>
-                </div>
-                <!---============spacing==========--->
-                <div class="pd_bottom_20"></div>
-                <!---============spacing==========--->
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="icon_box_only type_one color_two">
-                  <div class="icon_box_in trans">
-                    <div class="shape_image">
-                      <svg width="116" height="121" viewBox="0 0 116 121" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.8056 39.6223L0.500244 0H17.5002L36.1734 36.0124L19.8056 39.6223Z"
-                          fill="var(--color-set-one-1)"></path>
-                        <path class="two"
-                          d="M36.8216 44.7789L19.8086 39.6339L41.3565 29.0508L58.4829 34.1875L36.8216 44.7789Z"
-                          fill="var(--color-set-one-2)"></path>
-                        <path class="two"
-                          d="M75.3704 66.1668L58.0938 61.0318L80.9934 52.772L98.1198 57.9087L75.3704 66.1668Z"
-                          fill="var(--color-set-one-2)"></path>
-                        <path d="M41.3564 29.0508L58.0936 61.0319L71.4346 56.223L60.3526 34.7522L41.3564 29.0508Z"
-                          fill="var(--color-set-one-1)"></path>
-                        <path d="M80.9629 52.792L116 121V91.5L99.9591 58.4917" fill="var(--color-set-one-1)"></path>
-                      </svg>
-                    </div>
-                    <div class="after"></div>
-                    <div class="icon">
+                      {% endif %}
+                      {% if service_details.icon == 'Поддержка На Всех Этапах' %}
                       <i class=" flaticon-health-insurance-1"></i>
+                      {% endif %}
                     </div>
                     <div class="title_22">
-                      <a href="service-style-6.html"> Поддержка На Всех Этапах </a>
+                      <a href="service-style-6.html"> {{ service_details.service_title }} </a>
                     </div>
                     <a class="rd_more" href="service-style-6.html"> Читать Далее <i
                         class="icontb fi-rs-arrow-small-right"></i>
@@ -443,6 +256,7 @@
                 <div class="pd_bottom_20"></div>
                 <!---============spacing==========--->
               </div>
+              {% endfor %}
             </div>
           </div>
           <!---============spacing==========--->
@@ -459,7 +273,7 @@
             <div class="row align-items-center">
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="image_box">
-                  <img src="assets/images/service/ser-v1-3-min.png" alt="img" class="img-fluid">
+                  <img src="{{ details_id.escort_image.url }}" alt="img" class="img-fluid">
                 </div>
                 <!---============spacing==========--->
                 <div class="pd_bottom_40"></div>
@@ -468,53 +282,30 @@
               <div class="col-lg-6 col-md-6 col-sm-12 pd_left_30">
                 <div class="section_title type_one">
                   <div class="title_whole">
-                    <h2 class="title"> Сопровождение Бизнеса</h2>
+                    <h2 class="title"> {{ details_id.escort_title }}</h2>
                   </div>
                   <!---============spacing==========--->
                   <div class="pd_bottom_20"></div>
                   <!---============spacing==========--->
                 </div>
-                <div class="position-relative br_left_3px_theme_color pd_left_10"> Мы видим себя как ваших надежных
-                  партнеров на пути к успеху. Наше сопровождение бизнеса не ограничивается одноразовыми проектами, мы
-                  готовы работать с вами на долгосрочной основе, помогая вам достигать ваших целей.</div>
+                <div class="position-relative br_left_3px_theme_color pd_left_10"> {{ details_id.escort_context }}</div>
                 <!---============spacing==========--->
                 <div class="pd_bottom_30"></div>
                 <!---============spacing==========--->
                 <div class="block_faq">
                   <div class="accordion-box">
+                    {% for business in details_all %}
                     <div class="accordion">
                       <div class="question  faq_header">
                         <div class="question_box ">
-                          <div class="title_no_a_18 trans">Индивидуальный Подход </div>
+                          <div class="title_no_a_18 trans">{{ business.escort_title }} </div>
                           <span class="icon_fq trans fi-rs-arrow-small-right"></span>
                         </div>
                       </div>
-                      <div class="answer accordion-content">Мы понимаем, что каждый бизнес уникален. Наши услуги
-                        сопровождения бизнеса разрабатываются с учетом ваших уникальных потребностей и целей. Мы создаем
-                        стратегии и планы, адаптированные под вас.</div>
+                      <div class="answer accordion-content">{{ business.escort_text }}</div>
                     </div>
-                    <div class="accordion  active-block">
-                      <div class="question faq_header active">
-                        <div class="question_box">
-                          <div class="title_no_a_18 trans">Поддержка клиентов и обратная связь</div>
-                          <span class="icon_fq trans fi-rs-arrow-small-right"></span>
-                        </div>
-                      </div>
-                      <div class="answer accordion-content current"> Мы всегда готовы отвечать на ваши вопросы,
-                        предоставлять поддержку и слушать вашу обратную связь. Мы ценим взаимодействие с нашими
-                        клиентами. </div>
-                    </div>
-                    <div class="accordion">
-                      <div class="question  faq_header ">
-                        <div class="question_box ">
-                          <div class="title_no_a_18 trans"> Сфокусированные результаты</div>
-                          <span class="icon_fq trans fi-rs-arrow-small-right"></span>
-                        </div>
-                      </div>
-                      <div class="answer accordion-content"> Наши услуги сопровождения бизнеса нацелены на достижение
-                        конкретных результатов. Мы работаем с вами, чтобы гарантировать, что ваши цели становятся
-                        реальностью. </div>
-                    </div>
+                    {% endfor %}
+
                   </div>
                 </div>
                 <!---============spacing==========--->

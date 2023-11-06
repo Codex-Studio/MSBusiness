@@ -4282,6 +4282,7 @@ body .service_post.style_one .owl-carousel .owl-dots {
 
 .service_box.type_four.color_three {
   background: var(--color-set-one-bg-1);
+  height: 500px;
 }
 
 .service_box.type_four.color_three .line_box .line,
@@ -4534,6 +4535,7 @@ body .service_post.style_one .owl-carousel .owl-dots {
   background: var(--color-white);
   padding: 0px 40px 0px;
   overflow: hidden;
+  height: 350px;
 }
 
 .service_box.type_seven .content::before {

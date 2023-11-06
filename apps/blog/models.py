@@ -59,3 +59,50 @@ class OurProjects(models.Model):
     class Meta:
         verbose_name = ''
         verbose_name_plural = 'Наши проекты'
+
+
+
+#######################BLOG-DETAILS
+
+class BlogDetails(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка',
+        blank=True, null=True
+    )
+    context = models.CharField(
+        max_length=255,
+        verbose_name='Описание'
+    )
+    image = models.ImageField(
+        upload_to='blog_details',
+        verbose_name='Фото'
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = 'Настройки Детального Блога'
+
+class Details(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Колонка 1'
+    )
+    title2 = models.CharField(
+        max_length=155,
+        verbose_name='Колонка 2'
+    )
+    title3 = models.CharField(
+        max_length=155,
+        verbose_name='Колонка 3'
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = 'Сопровождение Бизнеса'

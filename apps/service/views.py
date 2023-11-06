@@ -1,12 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from apps.service.models import Service
+from apps.service.models import Service, Details, DetailsAll, ServiceDetails
 from apps.service.forms import UserRegistarForm
 # Create your views here.
 
 def service(request):
     service_all = Service.objects.all()
     return render(request, 'service.html', locals())
+
+
+def details(request):
+    details_id = Details.objects.latest('id')
+    details_all = DetailsAll.objects.all()
+    service_all = ServiceDetails.objects.all()
+    return render(request, 'service-details.html', locals())
 
 #код для регистраций 
 def register(request):
