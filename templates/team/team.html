@@ -1,0 +1,217 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+
+<section class="page_header_default pg_bg_cover alignment_center">
+    <div class="bakground_cover" style="background-image:url({% static 'assets/images/page-image-1-min.jpg'%})"></div>
+    <div class="page_header_content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title_inner">
+                        <div class="title">
+                            <span class="main_tit">Команда</span> </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 vankine">
+                    <ul class="breadcrumb m-auto">
+                        <li><a href="index.html">Главная</a> </li>
+                        <li class="active">Команда</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+                <!----==============page header==============--->
+                <!--content start-->
+                <div id="content" class="site-content">
+                    <!--team-->
+                    <section class="team-section">
+                        <!---============spacing==========--->
+                        <div class="pd_top_80"></div>
+                        <!---============spacing==========--->
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="section_title text-center type_one">
+                                        <div class="title_whole">
+                                            <h2 class="title"> Познакомьтесь с нашей удивительной командой</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---============spacing==========--->
+                            <div class="pd_bottom_40"></div>
+                            <!---============spacing==========--->
+                            <div class="row">
+                                {% for person in team %}
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="team_box type_two">
+                                        <div class="team_box_inner">
+                                            <div class="contnet">
+                                                <h6 class="title_22">
+                                                    <a href="{% url 'team-single' person.id %}">
+                                                        {{person.name}} </a></h6>
+                                                <p> {{person.job}}</p>
+                                            </div>
+                                            <div class="image_box">
+                                                <img src="{{person.image.url}}" alt="img"
+                                                    class="img-fluid" />
+                                                <div class="social-icons trans">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="team.html#" class="m_icon">
+                                                                <i class="fab fa-facebook"></i>
+                                                            </a></li>
+                                                        <li>
+                                                            <a href="team.html#" class="m_icon">
+                                                                <i class="fab fa-twitter"></i>
+                                                            </a></li>
+                                                        <li>
+                                                            <a href="team.html#" class="m_icon">
+                                                                <i class="fab fa-skype"></i>
+                                                            </a></li>
+                                                        <li>
+                                                            <a href="team.html#" class="m_icon">
+                                                                <i class="fab fa-instagram"></i>
+                                                            </a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                        </div>
+                        <!---============spacing==========--->
+                        <div class="pd_bottom_80"></div>
+                        <!---============spacing==========--->
+                    </section>
+                    <!--team-->
+                    <!--content-->
+                    <section class="content-section">
+                        <div class="medium-container-two">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="image_video_box_only  type_one mr_bottom_minus_140 z_1">
+                                        <div class="image one height_600px">
+                                            <img src="{% static 'assets/images/team/team-ex-1-min.png'%}" alt="img"
+                                                class="img-fluid height_600px">
+                                            <div class="video_box video-inner text-center">
+                                                <a href="https://youtu.be/RN81h85V6D4" class="lightbox-image">
+                                                    <i class="fi-rr-play"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 pd_left_80 pd_bottom_30">
+                                       <!---============spacing==========--->
+                                       <div class="pd_top_30"></div>
+                                       <!---============spacing==========--->
+                                    <div class="section_title type_one"><h4 class="sm_title"> Популярные навыки</h4><div class="title_whole"><h2 class="title"> Мы являемся лучшей консалтинговой компанией!</h2></div><p> Мы с гордостью объявляем себя лучшей консалтинговой компанией, предлагая непревзойденное знание, опыт и решения для вашего бизнеса. Наша миссия - помочь вам достичь выдающихся результатов в вашей отрасли. Мы работаем с вами бок о бок, разрабатываем стратегии, и предоставляем экспертные консультации, чтобы обеспечить ваш успех. Независимо от того, какие вызовы вы стоите перед собой, [Имя вашей компании] готово быть вашим надежным партнером в достижении ваших бизнес-целей.</p></div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_30"></div>
+                                    <!---============spacing==========--->
+                                    <div class="progress_bar"><div class="d-flex align-items-center"><h6 class="title_no_a_18">
+                                        Разработка</h6><div> <span class="count">79</span>%</div></div><div class="bar"><div class="bar-inner count-bar counted" data-percent="79%" style="width: 79%;"></div></div></div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_20"></div>
+                                    <!---============spacing==========--->
+                                    <div class="progress_bar"><div class="d-flex align-items-center"><h6 class="title_no_a_18">Банковское дело и транзакции</h6><div> <span class="count">93</span>%</div></div><div class="bar"><div class="bar-inner count-bar counted" data-percent="93%" style="width: 93%;"></div></div></div>
+                                    <!---============spacing==========--->
+                                    <div class="pd_bottom_60"></div>
+                                    <!---============spacing==========--->
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--content-->
+                    <!--service-->
+                    
+                    <!--service-->
+
+                </div>
+                <!--content end-->
+                <!--footer start-->
+                {% include 'include/footer.html' %}
+                <!--footer  end-->
+                <!----==============content_all_warpper==============--->
+                </div>
+                <!----==============content_all_warpper end==============--->
+                <!----==============mobile_menu_box ==============--->
+                <div class="mobile_menu_box">
+                    <div class="menu-backdrop"></div>
+                    <nav class="menu-box scrollbarcolor">
+                        <div class="close-btn"><i class="fi-rr-cross"></i></div>
+                        <form role="search" method="get" action="index.html#">
+                            <input type="search" class="search" placeholder="Поиск..." value="" name="s" title="Search" />
+                            <button type="submit" class="sch_btn"> <i class="fa fa-search"></i></button>
+                        </form>
+                        <div class="menu-outer">
+                            <div class="navigation_menu">
+                                <ul class="navbar_nav getmobilemenu">
+            
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mobile-header-info-wrap">
+                            <div class="single-mobile-header-info">
+                                <a href="tel:9806071234" class="cnt"><i class="fi-rs-headphones"></i>+996-777-777-777</a>
+                            </div>
+            
+                            <div class="single-mobile-header-info cont_over">
+                                <a href="mailto:sendmail@example.com" class="cnt"><i
+                                        class="fi-rs-envelope"></i>mailbox.msbusiness@gmail.com</a>
+                            </div>
+                            <div class="single-mobile-header-info">
+                                <a href="contact.html" class="theme_btn tp_one">Контакты</a>
+                            </div>
+                            <div class="single-mobile-header-info">
+                                <a href="index.html#" class="theme_btn">Service</a>
+                            </div>
+                        </div>
+            
+                    </nav>
+                </div>
+                <!----==============mobile_menu_box end==============--->
+                <!----==============search-popup==============--->
+                <div class="search-popup">
+                    <div class="close-search zoom-in-zoom-out"><i class="fa fa-times"></i></div>
+                    <div class="popup-inner">
+                        <div class="overlay-layer"></div>
+                        <div class="search-form">
+                            <fieldset>
+                                <form role="search" method="get" action="#index.html">
+                                    <input type="search" class="search" placeholder="Поиск..." value="" name="s" title="Search" />
+                                    <button type="submit" class="sch_btn"> <i class="fi-rs-search"></i></button>
+                                </form>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <!----==============search-popup end==============--->
+            
+                <!-- Back to top with progress indicator-->
+                <div class="prgoress_indicator">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                    </svg>
+                </div>
+            <!----==============option_panel end==============--->
+            <!-- Back to top with progress indicator-->
+            <div class="prgoress_indicator">
+                <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                </svg>
+            </div>
+            <!----=============page_wapper end=============---->
+        </div>
+        <!----=============page_wapper end=============---->
+
+        {% endblock %}

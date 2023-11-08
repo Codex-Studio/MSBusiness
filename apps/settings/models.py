@@ -59,7 +59,7 @@ class Settings(models.Model):
     
     class Meta:
         verbose_name = ''
-        verbose_name_plural = 'Настройки Всего'
+        verbose_name_plural = 'Настройки главной страницы'
 
 ICON = (
     ("ИЗУЧЕНИЕ", "ИЗУЧЕНИЕ"),
@@ -99,25 +99,7 @@ class OperationProcess(models.Model):
         verbose_name = ''
         verbose_name_plural = 'Процесс работы'
 
-class Service(models.Model):
-    title = models.CharField(
-        max_length=255,
-        verbose_name='Описание'
-    )
-    descriptio = models.TextField(
-        verbose_name = 'Описание'
-    )
-    image = models.ImageField(
-        upload_to='service', 
-        verbose_name='Фото'
-    )
 
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'Услуги'
 
 class Benefits(models.Model):
     title = models.CharField(
@@ -167,6 +149,11 @@ class Contact(models.Model):
         verbose_name='Сообщение',
         blank=True, null=True
     )
+    cause = models.CharField(
+        max_length=355,
+        verbose_name='Причина',
+        blank=True, null=True
+    )
 
     def __str__(self):
         return self.title
@@ -197,24 +184,6 @@ class Partner(models.Model):
     class Meta:
         verbose_name = ''
         verbose_name_plural = 'Партнеры'
-
-
-class Gellary(models.Model):
-    title = models.CharField(
-        max_length=155,
-        verbose_name='Заголовка'
-    )
-    image = models.ImageField(
-        upload_to='gallery',
-        verbose_name='Фото'
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'Галлерея'
 
 
 class Project(models.Model):

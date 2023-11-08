@@ -4,15 +4,39 @@ from django.db import models
 class About(models.Model):
     title = models.CharField(
         max_length=155,
-        verbose_name='Заголовка'
-    )
-    description = models.CharField(
-        max_length=255,
         verbose_name='Описание'
     )
+    text = models.TextField(
+        verbose_name='Текст'
+    )
+    context = models.TextField(
+        verbose_name='Текст 2'
+    )
     image = models.ImageField(
-        upload_to='about/',
+        upload_to='about',
         verbose_name='Фото'
+    )
+    business_title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка Бизнеса'
+    )
+    business_context = models.TextField(
+        verbose_name='Текст Бизнеса'
+    )
+    image = models.ImageField(
+        upload_to='businee',
+        verbose_name='Фото'
+    )
+    video = models.URLField(
+        verbose_name='Видео'
+    )
+    title_team = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка Команды'
+    )
+    request_title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка Запросов'
     )
 
     def __str__(self):
@@ -22,63 +46,18 @@ class About(models.Model):
         verbose_name = ''
         verbose_name_plural = 'Настройки Всего О нас'
 
-class Companion(models.Model):
-    description = models.TextField(
-        verbose_name='Текст'
-    )
-    descriptions = models.TextField(
-        verbose_name='Текст - 2'
-    )
-    image = models.ImageField(
-        upload_to='companion',
-        verbose_name='Фото'
-    )
-
-    def __str__(self):
-        return self.description
-    
-    class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'О компаний'
-
-class Business(models.Model):
-    title = models.CharField(
-        max_length=155,
-        verbose_name='Заголовка'
-    )
-    descriptions = models.TextField(
-        verbose_name='Описание'
-    )
-    image = models.ImageField(
-        upload_to='business',
-        verbose_name='Фото'
-    )
-    video = models.URLField(
-        verbose_name='Видео'
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'Бизнес'
-
 class Team(models.Model):
     title = models.CharField(
         max_length=155,
-        verbose_name='ФИО'
+        verbose_name='Зголовка'
     )
-    descriptions = models.CharField(
-        max_length=255,
+    context = models.CharField(
+        max_length=100,
         verbose_name='Должность'
     )
     image = models.ImageField(
-        upload_to='team',
+        upload_to='team/',
         verbose_name='Фото'
-    )
-    review = models.TextField(
-        verbose_name='Отзывы'
     )
 
     def __str__(self):
@@ -86,4 +65,33 @@ class Team(models.Model):
     
     class Meta:
         verbose_name = ''
-        verbose_name_plural = 'Наша команда'
+        verbose_name_plural = 'Наша Команда'
+
+class Review(models.Model):
+    name = models.CharField(
+        max_length=155,
+        verbose_name='ФИО'
+    )
+    context = models.CharField(
+        max_length=155,
+        verbose_name='Должность'
+    )
+    image = models.ImageField(
+        upload_to='review',
+        verbose_name='Фото'
+    )
+    review = models.CharField(
+        max_length=300,
+        verbose_name='Отзывы'
+    )
+    review_name = models.CharField(
+        max_length=155,
+        verbose_name='Отзыв От '
+    )
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = 'Отзывы'

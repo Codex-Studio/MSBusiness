@@ -1,108 +1,24 @@
 from django.db import models
 
 # Create your models here.
+from django.db import models
+
+# Create your models here.
 class Blog(models.Model):
     title = models.CharField(
         max_length=155,
-        verbose_name='Заголовка'
+        verbose_name='Заголовок'
     )
-    description = models.CharField(
-        max_length=155,
-        verbose_name='Описание'
+    descriptions = models.TextField(
+        verbose_name='Описание',
     )
     image = models.ImageField(
-        upload_to='blog',
-        verbose_name='Фото'
+        upload_to='Blog'
     )
 
     def __str__(self):
         return self.title
     
     class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'Блог'
-
-
-class OurProjects(models.Model):
-    title = models.CharField(
-        max_length=155,
-        verbose_name='Заголовка'
-    )
-    descriptio1 = models.CharField(
-        max_length=255,
-        verbose_name='Номер колонки - 1', 
-        blank=True, null=True
-    )
-    descriptio2 = models.CharField(
-        max_length=255,
-        verbose_name='Номер колонки - 2',
-        blank=True, null=True
-    )
-    descriptio3 = models.CharField(
-        max_length=255,
-        verbose_name='Номер колонки - 3',
-        blank=True, null=True
-    )
-    descriptio4 = models.CharField(
-        max_length=255,
-        verbose_name='Номер колонки - 4',
-        blank=True, null=True
-    )
-    image = models.ImageField(
-        upload_to='project',
-        verbose_name='фото'
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = ''
+        verbose_name = 'Наш проект'
         verbose_name_plural = 'Наши проекты'
-
-
-
-#######################BLOG-DETAILS
-
-class BlogDetails(models.Model):
-    title = models.CharField(
-        max_length=155,
-        verbose_name='Заголовка',
-        blank=True, null=True
-    )
-    context = models.CharField(
-        max_length=255,
-        verbose_name='Описание'
-    )
-    image = models.ImageField(
-        upload_to='blog_details',
-        verbose_name='Фото'
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'Настройки Детального Блога'
-
-class Details(models.Model):
-    title = models.CharField(
-        max_length=155,
-        verbose_name='Колонка 1'
-    )
-    title2 = models.CharField(
-        max_length=155,
-        verbose_name='Колонка 2'
-    )
-    title3 = models.CharField(
-        max_length=155,
-        verbose_name='Колонка 3'
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'Сопровождение Бизнеса'

@@ -1,0 +1,185 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+ 
+    <body class="theme-vankine scrollbarcolor">
+        <!----=============page_wapper=============---->
+        <div id="page" class="page_wapper hfeed site">
+            <!----=============page_wapper=============---->
+            <!----=============Preloader=============---->
+            <div class="loader-wrap">
+                <div class="preloader">
+                    <div class="preloader-close"><i class="fi-rr-cross"></i></div>
+                </div>
+                <div class="layer"> </div>
+                <div class="animation-preloader">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+            <!----=============Preloader end=============---->
+            {% include 'include/header.html' %}
+            <!----==============sticky header==============--->
+
+            <!----==============content_all_warpper==============--->
+            <div id="wrapper_full" class="content_all_warpper">
+                <!----==============content_all_warpper==============--->
+                <!----==============page header==============--->
+                <section class="page_header_default pg_bg_cover alignment_center">
+                    <div class="bakground_cover" style="background-image:url({% static 'assets/images/MS/service_bg_img.jpeg' %})"></div>
+                    <div class="page_header_content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="banner_title_inner">
+                                        <div class="title">
+                                            <span class="main_tit">Наши Услуги</span> </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 vankine">
+                                    <ul class="breadcrumb m-auto">
+                                        <li><a href="service.html#">Главная</a> </li>
+                                        <li class="">Наши Услуги</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!----==============page header==============--->
+                <!--content start-->
+                <div id="content" class="site-content">
+                    <!---service-->
+                    <section class="service-section-one">
+                    <!---============spacing==========--->
+                    <div class="pd_top_90"></div>
+                    <!---============spacing==========--->
+                    <div class="container">
+                        <div class="row align-items-end">
+                            <div class="col-lg-6">
+                                <div class="section_title type_one">
+                                                <div class="title_whole">
+                                                    <h2 class="title"> Наши Услуги </h2>
+                                            </div>
+                                        </div>
+                                          <!---============spacing==========--->
+                    <div class="pd_bottom_20"></div>
+                    <!---============spacing==========--->
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="mr_bottom_10">В MSBusiness мы предоставляем широкий спектр услуг, предназначенных для оптимизации вашего бизнеса и обеспечения его стабильного роста. Наша команда экспертов гордится тем, что может стать вашими надежными партнерами на пути к успеху.</p>
+                                <!---============spacing==========--->
+                    <div class="pd_bottom_20"></div>
+                    <!---============spacing==========--->
+                            </div>
+                        </div>
+                            <!---============spacing==========--->
+                    <div class="pd_bottom_20"></div>
+                    <!---============spacing==========--->
+                        <div class="row">
+                            {% for service in service_all %}
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                <div class="service_box type_one color_two">
+                                    <a href="{% url 'services_detail' service.id %}">
+                                        <div class="image">
+                                            <img class="img-fluid"
+                                                src="{{ service.image.url }}"
+                                                alt="Car Insurance">
+                                        </div>
+                                    </a>
+                                    <div class="content_box">
+                                        <div class="content_inner trans">
+                                            <div class="steps trans">{{ service.id }}</div>
+                                            <h4 class="title_24 trans">
+                                                <a href="{% url 'services_detail' service.id %}">
+                                                    {{ service.title }}
+                                                </a>
+                                            </h4>
+                                            <p class="trans">
+                                                {{ service.description }}
+                                            </p>
+                                            <a href="{% url 'services_detail' service.id %}" class="rd_more trans">
+                                                Читать Далее
+                                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 1L13 6M13 6L8 11M13 6H1"
+                                                        stroke="var(--color-white)" stroke-width="1.5"
+                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                          
+
+                        </div>
+                    </div>
+                      <!---============spacing==========--->
+                      <div class="pd_bottom_60"></div>
+                      <!---============spacing==========--->
+                    </section>
+                    <!---service end-->
+                </div>
+                <!--content end-->
+                <!--footer start-->
+                {% include 'include/footer.html' %}
+                <!--footer  end-->
+                <!----==============content_all_warpper==============--->
+            </div>
+            <!----==============content_all_warpper end==============--->
+            <!----==============mobile_menu_box ==============--->
+            <div class="mobile_menu_box">
+                <div class="menu-backdrop"></div>
+                <nav class="menu-box scrollbarcolor">
+                    <div class="close-btn"><i class="fi-rr-cross"></i></div>
+                    <form role="search" method="get" action="index.html#">
+                        <input type="search" class="search" placeholder="Поиск..." value="" name="s" title="Search" />
+                        <button type="submit" class="sch_btn"> <i class="fa fa-search"></i></button>
+                    </form>
+                    <div class="menu-outer">
+                        <div class="navigation_menu">
+                            <ul class="navbar_nav getmobilemenu">
+        
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mobile-header-info-wrap">
+                        <div class="single-mobile-header-info">
+                            <a href="tel:9806071234" class="cnt"><i class="fi-rs-headphones"></i>+996-777-777-777</a>
+                        </div>
+        
+                        <div class="single-mobile-header-info cont_over">
+                            <a href="mailto:sendmail@example.com" class="cnt"><i
+                                    class="fi-rs-envelope"></i>mailbox.msbusiness@gmail.com</a>
+                        </div>
+                        <div class="single-mobile-header-info">
+                            <a href="contact.html" class="theme_btn tp_one">Контакты</a>
+                        </div>
+                        <div class="single-mobile-header-info">
+                            <a href="index.html#" class="theme_btn">Service</a>
+                        </div>
+                    </div>
+        
+                </nav>
+            </div>
+            <!----==============mobile_menu_box end==============--->
+            <!----==============search-popup==============--->
+            <div class="search-popup">
+                <div class="close-search zoom-in-zoom-out"><i class="fa fa-times"></i></div>
+                <div class="popup-inner">
+                    <div class="overlay-layer"></div>
+                    <div class="search-form">
+                        <fieldset>
+                            <form role="search" method="get" action="#index.html">
+                                <input type="search" class="search" placeholder="Поиск..." value="" name="s" title="Search" />
+                                <button type="submit" class="sch_btn"> <i class="fi-rs-search"></i></button>
+                            </form>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <!----==============search-popup end==============--->
+            <!----==============option_panel==============--->
+            {% endblock %}

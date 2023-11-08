@@ -1,0 +1,256 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+ 
+    <body class="theme-vankine scrollbarcolor">
+      <!----=============page_wapper=============---->
+      <div id="page" class="page_wapper hfeed site">
+        <!----=============page_wapper=============---->
+        <!----=============Preloader=============---->
+        <div class="loader-wrap">
+          <div class="preloader">
+            <div class="preloader-close">
+              <i class="fi-rr-cross"></i>
+            </div>
+          </div>
+          <div class="layer"></div>
+          <div class="animation-preloader">
+            <div class="spinner"></div>
+          </div>
+        </div>
+        <!----=============Preloader end=============---->
+        <!----=============Header=============---->
+        {% include 'include/header.html' %}
+        <!----=============Header end=============---->
+        <!----==============sticky header==============--->
+        <!----==============sticky header end==============--->
+        <!----==============content_all_warpper==============--->
+        <div id="wrapper_full" class="content_all_warpper">
+          <!----==============content_all_warpper==============--->
+          <!----==============page header==============--->
+          <section class="page_header_default pg_bg_cover alignment_center">
+            <div class="bakground_cover" style="background-image:url({% static 'assets/images/page-image-1-min.jpg'%})"></div>
+            <div class="page_header_content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="banner_title_inner">
+                      <div class="title">
+                        <span class="main_tit">Подробнее о проекте</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 vankine">
+                    <ul class="breadcrumb m-auto">
+                      <li>
+                        <a href="index.html">Главная</a>
+                      </li>
+                      <li class="active">{{blog.title}}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!----==============page header==============--->
+          <!--content start-->
+          <div id="content" class="site-content">
+            <section class="blog-detail-section">
+              <!---============spacing==========--->
+              <div class="pd_top_90"></div>
+              <!---============spacing==========--->
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="blog_single_content">
+                      <div class="single-thumbnail">
+                        <img src="{{blog.image.url}}" class="img-fluid" alt="img" />
+                      </div>
+                      <div class="single_content_upper">
+                        <div class="post_single_content">
+                          <div class="section_title small type_one mr_bottom_25">
+                            <div class="title_whole">
+                              <h3 class="title">{{ blog.descriptions }}  </h3>
+                            </div>
+                          </div>
+
+                          <div class="row mr_bottom_20">
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                              <div class="position-relative">
+                                <ul class="list_box list">
+                                  <li>
+                                    <div class="d-flex align-items-center">
+                                      <div class="icon trans">
+                                        <i aria-hidden="false" class="fas fa-check-circle"></i>
+                                      </div>
+                                      <a class="links" href="blog-details.html#"> Профессионализм</a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex align-items-center">
+                                      <div class="icon trans">
+                                        <i aria-hidden="false" class="fas fa-check-circle"></i>
+                                      </div>
+                                      <a class="links" href="blog-details.html#"> Индивидуальный подход</a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex align-items-center">
+                                      <div class="icon trans">
+                                        <i aria-hidden="false" class="fas fa-check-circle"></i>
+                                      </div>
+                                      <a class="links" href="blog-details.html#"> Стратегическое мышление</a>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                              <div class="position-relative">
+                                <ul class="list_box list">
+                                  <li>
+                                    <div class="d-flex align-items-center">
+                                      <div class="icon trans">
+                                        <i aria-hidden="false" class="fas fa-check-circle"></i>
+                                      </div>
+                                      <a class="links" href="blog-details.html#"> Мониторинг и Оценка </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex align-items-center">
+                                      <div class="icon trans">
+                                        <i aria-hidden="false" class="fas fa-check-circle"></i>
+                                      </div>
+                                      <a class="links" href="blog-details.html#"> Специализированные знания </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex align-items-center">
+                                      <div class="icon trans">
+                                        <i aria-hidden="false" class="fas fa-check-circle"></i>
+                                      </div>
+                                      <a class="links" href="blog-details.html#"> Доверие и Конфиденциальность </a>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                              <div class="position-relative">
+                                <ul class="list_box list">
+                                  <li>
+                                    <div class="d-flex align-items-center">
+                                      <div class="icon trans">
+                                        <i aria-hidden="false" class="fas fa-check-circle"></i>
+                                      </div>
+                                      <a class="links" href="blog-details.html#"> Гибкость и Адаптивность </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex align-items-center">
+                                      <div class="icon trans">
+                                        <i aria-hidden="false" class="fas fa-check-circle"></i>
+                                      </div>
+                                      <a class="links" href="blog-details.html#"> Систематичность и Последовательность</a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex align-items-center">
+                                      <div class="icon trans">
+                                        <i aria-hidden="false" class="fas fa-check-circle"></i>
+                                      </div>
+                                      <a class="links" href="blog-details.html#"> Ориентированность на Результаты</a>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---============spacing==========--->
+              <div class="pd_bottom_70"></div>
+              <!---============spacing==========--->
+            </section>
+          </div>
+          <!--content end-->
+          <!--footer start-->
+          {% include 'include/footer.html' %}
+        <!--footer  end-->
+        <!----==============content_all_warpper==============--->
+        </div>
+        <!----==============content_all_warpper end==============--->
+        <!----==============mobile_menu_box ==============--->
+        <div class="mobile_menu_box">
+            <div class="menu-backdrop"></div>
+            <nav class="menu-box scrollbarcolor">
+                <div class="close-btn"><i class="fi-rr-cross"></i></div>
+                <form role="search" method="get" action="index.html#">
+                    <input type="search" class="search" placeholder="Поиск..." value="" name="s" title="Search" />
+                    <button type="submit" class="sch_btn"> <i class="fa fa-search"></i></button>
+                </form>
+                <div class="menu-outer">
+                    <div class="navigation_menu">
+                        <ul class="navbar_nav getmobilemenu">
+    
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobile-header-info-wrap">
+                    <div class="single-mobile-header-info">
+                        <a href="tel:9806071234" class="cnt"><i class="fi-rs-headphones"></i>+996-777-777-777</a>
+                    </div>
+    
+                    <div class="single-mobile-header-info cont_over">
+                        <a href="mailto:sendmail@example.com" class="cnt"><i
+                                class="fi-rs-envelope"></i>mailbox.msbusiness@gmail.com</a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="contact.html" class="theme_btn tp_one">Контакты</a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="index.html#" class="theme_btn">Service</a>
+                    </div>
+                </div>
+    
+            </nav>
+        </div>
+        <!----==============mobile_menu_box end==============--->
+        <!----==============search-popup==============--->
+        <div class="search-popup">
+            <div class="close-search zoom-in-zoom-out"><i class="fa fa-times"></i></div>
+            <div class="popup-inner">
+                <div class="overlay-layer"></div>
+                <div class="search-form">
+                    <fieldset>
+                        <form role="search" method="get" action="#index.html">
+                            <input type="search" class="search" placeholder="Поиск..." value="" name="s" title="Search" />
+                            <button type="submit" class="sch_btn"> <i class="fi-rs-search"></i></button>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <!----==============search-popup end==============--->
+    
+        <!-- Back to top with progress indicator-->
+        <div class="prgoress_indicator">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+        <!----==============option_panel end==============--->
+        <!-- Back to top with progress indicator-->
+        <div class="prgoress_indicator">
+          <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+          </svg>
+        </div>
+        <!----=============page_wapper end=============---->
+      </div>
+      <!----=============page_wapper end=============---->
+      {% endblock %}
