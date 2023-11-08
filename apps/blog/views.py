@@ -1,12 +1,11 @@
+
 from django.shortcuts import render
-from apps.blog.models import Blog, OurProjects, BlogDetails, Details
+from apps.blog.models import Blog
 # Create your views here.
 def blog(request):
-    blog = Blog.objects.latest('id')
-    project_all = OurProjects.objects.all()
-    return render(request, 'blog.html', locals())
+    blog_all = Blog.objects.all()
+    return render(request, 'blog/blog.html', locals())
 
-def details(request):
-    blog = BlogDetails.objects.latest('id')
-    deatils_all = Details.objects.all()
-    return render(request, 'blog-details.html', locals())
+def blog_details(request, id):
+    blog = Blog.objects.get(id=id)
+    return render(request, 'blog/blog-details.html', locals())

@@ -1,8 +1,8 @@
 from django.urls import path
-from apps.service.views import service, register, details
+
+from .views import service, services_detail
 
 urlpatterns = [
-    path('service/', service, name='service'),
-    path('my-account/', register, name='register'),
-    path('details', details, name='service-details'),
+    path('service/', service, name="service"),
+    path('services_detail/<int:id>/', services_detail, name="services_detail"),
 ]
